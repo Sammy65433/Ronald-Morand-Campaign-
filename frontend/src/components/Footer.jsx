@@ -1,9 +1,12 @@
+import { useTranslation } from "react-i18next";
 import "../styles/Footer.css";
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
-      <p>© 2025 Ronald Morand Campaign. All rights reserved.</p>
+      <p>{t("footerText")}</p>
     </footer>
   );
 }

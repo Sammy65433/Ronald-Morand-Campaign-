@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { FaGlobeAmericas, FaUsers, FaBullhorn } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import candidateImg1 from "../assets/Morand2.jpg";
 import candidateImg2 from "../assets/Morand4.jpeg";
 import "../styles/AboutSection.css";
 
 function AboutSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="about-page-section">
       <div className="about-container">
@@ -14,26 +17,14 @@ function AboutSection() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="about-tag">About the Campaign</p>
-          <h2>About Ronald Morand</h2>
+          <p className="about-tag">{t("aboutTag")}</p>
+          <h2>{t("aboutTitle")}</h2>
 
-          <p className="about-lead">
-            Ronald Morand is committed to serving the people of Haiti with
-            leadership, integrity, and a strong vision for the future.
-          </p>
+          <p className="about-lead">{t("aboutLead")}</p>
 
-          <p>
-            This campaign is focused on community support, progress, and
-            creating opportunities for the people. It is built on the belief
-            that real leadership starts by listening, serving, and bringing
-            people together.
-          </p>
+          <p>{t("aboutText1")}</p>
 
-          <p>
-            With support from local communities and Haitians around the world,
-            this campaign aims to inspire hope, strengthen outreach, and create
-            meaningful impact ahead of Election Day.
-          </p>
+          <p>{t("aboutText2")}</p>
         </motion.div>
 
         <motion.div
@@ -60,29 +51,20 @@ function AboutSection() {
       >
         <div className="about-mission-card">
           <FaUsers className="about-icon" />
-          <h3>Community</h3>
-          <p>
-            Building stronger relationships and empowering families through
-            service and outreach.
-          </p>
+          <h3>{t("missionCommunityTitle")}</h3>
+          <p>{t("missionCommunityText")}</p>
         </div>
 
         <div className="about-mission-card">
           <FaBullhorn className="about-icon" />
-          <h3>Leadership</h3>
-          <p>
-            Promoting honest leadership, clear communication, and meaningful
-            representation.
-          </p>
+          <h3>{t("missionLeadershipTitle")}</h3>
+          <p>{t("missionLeadershipText")}</p>
         </div>
 
         <div className="about-mission-card">
           <FaGlobeAmericas className="about-icon" />
-          <h3>Vision</h3>
-          <p>
-            Creating a hopeful future for Haiti through progress, opportunity,
-            and unity.
-          </p>
+          <h3>{t("missionVisionTitle")}</h3>
+          <p>{t("missionVisionText")}</p>
         </div>
       </motion.div>
     </section>

@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import "../styles/ContactSection.css";
 
 function ContactSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="contact-page">
       <motion.div
@@ -11,12 +14,9 @@ function ContactSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <p className="contact-tag">Contact the Campaign</p>
-        <h2>Get in Touch</h2>
-        <p className="contact-subtext">
-          Have a question, want to support the campaign, or looking to connect
-          with the team? Send us a message and we will get back to you.
-        </p>
+        <p className="contact-tag">{t("contactTag")}</p>
+        <h2>{t("contactTitle")}</h2>
+        <p className="contact-subtext">{t("contactSubtext")}</p>
       </motion.div>
 
       <div className="contact-layout">
@@ -29,24 +29,16 @@ function ContactSection() {
           <div className="contact-info-item">
             <FaEnvelope className="contact-icon" />
             <div>
-              <h3>Email</h3>
-              <p>RonaldMorandgoFundMe@Gmail.com</p>
-            </div>
-          </div>
-
-          <div className="contact-info-item">
-            <FaPhoneAlt className="contact-icon" />
-            <div>
-              <h3>Phone</h3>
-              <p>(267) 616-3905</p>
+              <h3>{t("emailLabel")}</h3>
+              <p>Rmorand2026@gmail.com</p>
             </div>
           </div>
 
           <div className="contact-info-item">
             <FaMapMarkerAlt className="contact-icon" />
             <div>
-              <h3>Campaign Base</h3>
-              <p>United States Support Network</p>
+              <h3>{t("campaignSupport")}</h3>
+              <p>{t("campaignSupportText")}</p>
             </div>
           </div>
         </motion.div>
@@ -70,22 +62,32 @@ function ContactSection() {
           </p>
 
           <div className="form-row">
-            <input type="text" name="name" placeholder="Full Name" required />
-            <input type="email" name="email" placeholder="Email Address" required />
+            <input
+              type="text"
+              name="name"
+              placeholder={t("fullName")}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder={t("emailAddress")}
+              required
+            />
           </div>
 
-          <input type="tel" name="phone" placeholder="Phone Number" />
+          <input type="text" name="phone" placeholder={t("phone")} />
 
           <textarea
             name="message"
-            placeholder="Write your message here..."
+            placeholder={t("messagePlaceholder")}
             rows="7"
             required
           ></textarea>
 
           <button type="submit" className="contact-submit-btn">
             <FaPaperPlane />
-            Send Message
+            {t("sendMessage")}
           </button>
         </motion.form>
       </div>

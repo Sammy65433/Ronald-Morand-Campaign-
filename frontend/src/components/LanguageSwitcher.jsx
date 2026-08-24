@@ -8,11 +8,13 @@ function LanguageSwitcher() {
   };
 
   return (
-    <select onChange={changeLanguage} value={i18n.language}>
-      <option value="en">English</option>
-      <option value="fr">French</option>
-      <option value="ht">Kreyòl</option>
-    </select>
+    <div className="language-switcher">
+      <select onChange={changeLanguage} value={i18n.language}>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="ht">Kreyòl</option>
+      </select>
+    </div>
   );
 }
 

@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function SupportSection() {
+  const { t } = useTranslation();
+
   const cards = [
-    { amount: "$25", text: "Helps spread campaign awareness" },
-    { amount: "$50", text: "Supports outreach and communication" },
-    { amount: "$100", text: "Helps fund events and organizing" },
+    { amount: "$25", text: t("support25") },
+    { amount: "$50", text: t("support50") },
+    { amount: "$100", text: t("support100") },
   ];
 
   return (
@@ -16,11 +19,8 @@ function SupportSection() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <h2>Support the Campaign</h2>
-        <p>
-          Every contribution helps build momentum, increase outreach, and bring
-          the campaign message to more people across the community.
-        </p>
+        <h2>{t("supportTitle")}</h2>
+        <p>{t("supportText")}</p>
 
         <div className="support-cards">
           {cards.map((card, index) => (
@@ -32,7 +32,7 @@ function SupportSection() {
         </div>
 
         <Link to="/donate" className="hero-btn">
-          Contribute Today
+          {t("contributeToday")}
         </Link>
       </motion.div>
     </section>

@@ -7,11 +7,14 @@ import {
   FaLock,
   FaHandHoldingHeart,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import "../styles/DonateSection.css";
 import ronaldImg from "../assets/Morand2.jpg";
 import communityImg from "../assets/Morandcomm2.jpg";
 
 function DonateSection() {
+  const { t } = useTranslation();
+
   const goal = 100000;
   const raised = 0;
   const donors = 0;
@@ -44,13 +47,9 @@ function DonateSection() {
         transition={{ duration: 0.7 }}
       >
         <div className="donate-hero-text">
-          <p className="donate-tag">Support the Campaign</p>
-          <h1>Help Fund Ronald Morand’s 2026 Election Campaign</h1>
-          <p className="donate-subtext">
-            Every donation helps expand outreach, strengthen community support,
-            and move this campaign forward in Haiti. Your contribution helps
-            power a message of leadership, unity, and lasting impact.
-          </p>
+          <p className="donate-tag">{t("donateTag")}</p>
+          <h1>{t("donateTitle")}</h1>
+          <p className="donate-subtext">{t("donateSubtext")}</p>
 
           <div className="donate-hero-actions">
             <a
@@ -60,12 +59,12 @@ function DonateSection() {
               className="donate-primary-btn"
             >
               <FaLock />
-              Donate Securely
+              {t("donateSecurely")}
             </a>
 
             <div className="donate-impact-chip">
               <FaHandHoldingHeart />
-              <span>Every contribution makes a difference</span>
+              <span>{t("donateImpactChip")}</span>
             </div>
           </div>
         </div>
@@ -87,8 +86,8 @@ function DonateSection() {
               className="donate-mini-image"
             />
             <div className="donate-mini-text">
-              <strong>Community First</strong>
-              <span>Building support through outreach and action</span>
+              <strong>{t("missionCommunityTitle")}</strong>
+              <span>{t("impact100")}</span>
             </div>
           </div>
         </div>
@@ -101,15 +100,17 @@ function DonateSection() {
         transition={{ duration: 0.8 }}
       >
         <div className="donate-stat-card">
-          <span>Goal</span>
+          <span>{t("goal")}</span>
           <h3>$100,000</h3>
         </div>
+
         <div className="donate-stat-card">
-          <span>Raised</span>
-          <h3>To Be Updated</h3>
+          <span>{t("raised")}</span>
+          <h3>{t("toBeUpdated")}</h3>
         </div>
+
         <div className="donate-stat-card">
-          <span>Supporters</span>
+          <span>{t("supporters")}</span>
           <h3>{donors}</h3>
         </div>
       </motion.div>
@@ -121,9 +122,10 @@ function DonateSection() {
         transition={{ delay: 0.2, duration: 0.8 }}
       >
         <div className="progress-top">
-          <span>Campaign Progress</span>
+          <span>{t("campaignProgress")}</span>
           <span>{progress.toFixed(0)}%</span>
         </div>
+
         <div className="progress-bar">
           <div
             className="progress-fill"
@@ -140,19 +142,22 @@ function DonateSection() {
       >
         <div className="impact-card glass-card">
           <h4>$25</h4>
-          <p>Support the movement</p>
+          <p>{t("impact25")}</p>
         </div>
+
         <div className="impact-card glass-card">
           <h4>$50</h4>
-          <p>Help us reach more voters</p>
+          <p>{t("impact50")}</p>
         </div>
+
         <div className="impact-card glass-card">
           <h4>$100</h4>
-          <p>Fund campaign outreach</p>
+          <p>{t("impact100")}</p>
         </div>
+
         <div className="impact-card glass-card">
           <h4>$250</h4>
-          <p>Support community events</p>
+          <p>{t("impact250")}</p>
         </div>
       </motion.div>
 
@@ -163,12 +168,9 @@ function DonateSection() {
         transition={{ duration: 0.7 }}
       >
         <div className="donorbox-copy">
-          <p className="donorbox-tag">Secure Online Giving</p>
-          <h2>Make Your Contribution Today</h2>
-          <p>
-            Give online through our secure donation form. Your support helps
-            strengthen outreach, grow visibility, and move the campaign forward.
-          </p>
+          <p className="donorbox-tag">{t("donorboxTag")}</p>
+          <h2>{t("donorboxTitle")}</h2>
+          <p>{t("donorboxText")}</p>
         </div>
 
         <div className="donorbox-embed-wrapper glass-card">
@@ -189,9 +191,11 @@ function DonateSection() {
         >
           <div className="donation-card-header">
             <FaMobileAlt className="donation-icon" />
-            <h3>Zelle Donation</h3>
+            <h3>{t("zelleTitle")}</h3>
           </div>
-          <p className="donation-label">Send your contribution to:</p>
+
+          <p className="donation-label">{t("zelleLabel")}</p>
+
           <div className="donation-value-row">
             <p className="donation-value">267-616-3905</p>
             <button
@@ -201,9 +205,8 @@ function DonateSection() {
               <FaCopy />
             </button>
           </div>
-          <p className="donation-note">
-            Use Zelle for fast and direct campaign support.
-          </p>
+
+          <p className="donation-note">{t("zelleNote")}</p>
         </motion.div>
 
         <motion.div
@@ -214,11 +217,11 @@ function DonateSection() {
         >
           <div className="donation-card-header">
             <FaUniversity className="donation-icon" />
-            <h3>Bank Transfer</h3>
+            <h3>{t("bankTitle")}</h3>
           </div>
 
           <div className="bank-row">
-            <span>Account Number</span>
+            <span>{t("accountNumber")}</span>
             <div className="donation-value-row">
               <p className="donation-value">52709339541</p>
               <button
@@ -231,7 +234,7 @@ function DonateSection() {
           </div>
 
           <div className="bank-row">
-            <span>Routing Number</span>
+            <span>{t("routingNumber")}</span>
             <div className="donation-value-row">
               <p className="donation-value">10212000250</p>
               <button
@@ -243,9 +246,7 @@ function DonateSection() {
             </div>
           </div>
 
-          <p className="donation-note">
-            Please confirm account details before sending your donation.
-          </p>
+          <p className="donation-note">{t("bankNote")}</p>
         </motion.div>
       </div>
 
@@ -256,12 +257,8 @@ function DonateSection() {
         transition={{ duration: 0.7 }}
       >
         <FaHandHoldingHeart className="message-icon" />
-        <h3>Thank You for Supporting the Campaign</h3>
-        <p>
-          Your generosity helps strengthen the movement, expand our outreach,
-          and build a better future for Haiti through leadership and community
-          action.
-        </p>
+        <h3>{t("thankYouTitle")}</h3>
+        <p>{t("thankYouText")}</p>
       </motion.div>
     </section>
   );

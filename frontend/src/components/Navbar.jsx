@@ -9,14 +9,22 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <Link to="/">Ronald Morand Campaign</Link>
+        <Link to="/">{t("campaign")}</Link>
       </div>
 
       <ul className="nav-links">
-        <li><Link to="/about">{t("about")}</Link></li>
-        <li><Link to="/community">{t("community")}</Link></li>
-        <li><Link to="/donate">{t("donate")}</Link></li>
-        <li><Link to="/contact">{t("contact")}</Link></li>
+        <li>
+          <Link to="/about">{t("about")}</Link>
+        </li>
+        <li>
+          <Link to="/community">{t("community")}</Link>
+        </li>
+        <li>
+          <Link to="/donate">{t("donate")}</Link>
+        </li>
+        <li>
+          <Link to="/contact">{t("contact")}</Link>
+        </li>
       </ul>
 
       <LanguageSwitcher />

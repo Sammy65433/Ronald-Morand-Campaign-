@@ -5,11 +5,14 @@ import {
   FaSeedling,
   FaQuoteLeft,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import candidateImg1 from "../assets/Morand2.jpg";
 import candidateImg2 from "../assets/Morand1.jpg";
 import "../styles/CampaignSpotlight.css";
 
 function CampaignSpotlight() {
+  const { t } = useTranslation();
+
   return (
     <section className="spotlight-section">
       <div className="spotlight-bg-shape one"></div>
@@ -33,7 +36,7 @@ function CampaignSpotlight() {
 
           <div className="spotlight-quote glass-panel">
             <FaQuoteLeft className="spotlight-quote-icon" />
-            <p>Building hope through service, unity, and action.</p>
+            <p>{t("spotlightQuote")}</p>
           </div>
         </motion.div>
 
@@ -44,39 +47,29 @@ function CampaignSpotlight() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p className="spotlight-tag">A Vision for Haiti</p>
-          <h2>Leadership Rooted in Community</h2>
+          <p className="spotlight-tag">{t("spotlightTag")}</p>
+          <h2>{t("spotlightTitle")}</h2>
 
-          <p className="spotlight-lead">
-            Ronald Morand’s campaign is focused on service, unity, and
-            progress.
-          </p>
+          <p className="spotlight-lead">{t("spotlightLead")}</p>
 
-          <p>
-            This movement is about empowering communities, creating
-            opportunity, and building a better future for Haiti.
-          </p>
+          <p>{t("spotlightText1")}</p>
 
-          <p>
-            With support from people at home and abroad, this campaign can
-            expand its outreach, strengthen its message, and reach more
-            families across the country.
-          </p>
+          <p>{t("spotlightText2")}</p>
 
           <div className="spotlight-points">
             <div className="point-card glass-panel">
               <FaUsers className="point-icon" />
-              <span>Community First</span>
+              <span>{t("spotlightPoint1")}</span>
             </div>
 
             <div className="point-card glass-panel">
               <FaGlobeAmericas className="point-icon" />
-              <span>Global Support</span>
+              <span>{t("spotlightPoint2")}</span>
             </div>
 
             <div className="point-card glass-panel">
               <FaSeedling className="point-icon" />
-              <span>Future-Focused Leadership</span>
+              <span>{t("spotlightPoint3")}</span>
             </div>
           </div>
         </motion.div>

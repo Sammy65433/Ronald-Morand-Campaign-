@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Countdown() {
+  const { t } = useTranslation();
   const targetDate = new Date("2026-12-13T00:00:00").getTime();
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
 
@@ -9,7 +11,12 @@ function Countdown() {
     const distance = targetDate - now;
 
     if (distance <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
     }
 
     return {
@@ -32,19 +39,22 @@ function Countdown() {
     <div className="countdown">
       <div className="countdown-box">
         <span>{timeLeft.days}</span>
-        <p>Days</p>
+        <p>{t("countdownDays")}</p>
       </div>
+
       <div className="countdown-box">
         <span>{timeLeft.hours}</span>
-        <p>Hours</p>
+        <p>{t("countdownHours")}</p>
       </div>
+
       <div className="countdown-box">
         <span>{timeLeft.minutes}</span>
-        <p>Minutes</p>
+        <p>{t("countdownMinutes")}</p>
       </div>
+
       <div className="countdown-box">
         <span>{timeLeft.seconds}</span>
-        <p>Seconds</p>
+        <p>{t("countdownSeconds")}</p>
       </div>
     </div>
   );
