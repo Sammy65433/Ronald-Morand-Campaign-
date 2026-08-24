@@ -1,0 +1,114 @@
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+    FaCalendarAlt,
+    FaHandHoldingHeart,
+    FaUsers,
+    FaLock,
+    FaQuoteLeft,
+} from "react-icons/fa";
+import "../styles/Hero.css";
+import candidateImg1 from "../assets/Morand1.jpg";
+import Countdown from "./Countdown";
+import { FaGlobeAmericas } from "react-icons/fa";
+
+function Hero() {
+    return (
+        <section className="hero">
+            <div className="hero-bg-shape hero-bg-one"></div>
+            <div className="hero-bg-shape hero-bg-two"></div>
+
+            <motion.div
+                className="hero-content"
+                initial={{ opacity: 0, x: -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+            >
+                <p className="hero-tag">Election Campaign 2026</p>
+
+                <h1>Ronald Morand Campaign</h1>
+
+                <p className="hero-text">
+                    Support Ronald Morand’s campaign for election in Haiti. Together, we
+                    can build a stronger future for families, communities, and the next
+                    generation.
+                </p>
+
+                <div className="hero-mini-info">
+                    <div className="mini-pill">
+                        <FaCalendarAlt />
+                        <span>Election Day: December 13, 2026</span>
+                    </div>
+                </div>
+
+                <div className="hero-actions">
+                    <a
+                        href="https://donorbox.org/ronald-morand-campaign-fund"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hero-btn"
+                    >
+                        <FaLock />
+                        Donate Now
+                    </a>
+
+                    <Link to="/about" className="hero-btn secondary-btn">
+                        Learn More
+                    </Link>
+                </div>
+
+                <Countdown />
+
+                <div className="hero-stats">
+                    <div className="stat-box glass-card">
+                        <FaCalendarAlt className="stat-icon" />
+                        <h3>2026</h3>
+                        <p>Election Year</p>
+                    </div>
+
+                    <div className="stat-box glass-card">
+                        <FaUsers className="stat-icon" />
+                        <h3>Haiti</h3>
+                        <p>Community Focus</p>
+                    </div>
+
+                    <div className="stat-box glass-card">
+                        <FaHandHoldingHeart className="stat-icon" />
+                        <h3>100%</h3>
+                        <p>Grassroots Support</p>
+                    </div>
+                </div>
+            </motion.div>
+
+            <motion.div
+                className="hero-image-wrapper"
+                initial={{ opacity: 0, y: 40, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.9 }}
+            >
+                <div className="hero-image-stack">
+                    <div className="flag-accent"></div>
+
+                    <div className="hero-image-card glass-card">
+                        <img src={candidateImg1} alt="Ronald Morand" className="hero-image" />
+                    </div>
+                    <div className="floating-badge glass-card">
+                        <FaGlobeAmericas className="badge-icon" />
+                        <span>🇭🇹 For Haiti</span>
+                    </div>
+
+
+                    <div className="quote-card glass-card">
+                        <FaQuoteLeft className="quote-icon" />
+                        <p>
+                            Leadership begins with Service, Unity, and a Commitment to the
+                            People.
+                        </p>
+                    </div>
+                </div>
+            </motion.div>
+        </section>
+    );
+}
+
+export default Hero;

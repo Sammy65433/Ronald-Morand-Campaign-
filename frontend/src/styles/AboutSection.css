@@ -1,0 +1,151 @@
+.about-page-section {
+  padding: 90px 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto 70px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-content {
+  max-width: 620px;
+}
+
+.about-tag {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin-bottom: 14px;
+}
+
+.about-content h2 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  color: #081120;
+  margin-bottom: 20px;
+}
+
+.about-lead {
+  font-size: 1.18rem;
+  line-height: 1.8;
+  color: #1f2937;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+.about-content p {
+  font-size: 1.04rem;
+  line-height: 1.9;
+  color: #4b5563;
+  margin-bottom: 18px;
+}
+
+.about-images {
+  position: relative;
+  min-height: 560px;
+}
+
+.about-img-card {
+  overflow: hidden;
+  border-radius: 26px;
+  background: white;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-img-card.top {
+  width: 72%;
+  height: 340px;
+  margin-left: auto;
+}
+
+.about-img-card.bottom {
+  width: 78%;
+  height: 280px;
+  margin-top: -40px;
+  border: 8px solid white;
+}
+
+.about-mission-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.about-mission-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+  border: 1px solid #e9eef7;
+  border-radius: 24px;
+  padding: 28px 24px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.05);
+}
+
+.about-icon {
+  font-size: 1.5rem;
+  color: #2563eb;
+  margin-bottom: 14px;
+}
+
+.about-mission-card h3 {
+  font-size: 1.4rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.about-mission-card p {
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+@media (max-width: 950px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-images {
+    min-height: auto;
+  }
+
+  .about-img-card.top,
+  .about-img-card.bottom {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .about-img-card.bottom {
+    margin-top: 20px;
+  }
+
+  .about-mission-grid {
+    grid-template-columns: 1fr;
+  }
+}
