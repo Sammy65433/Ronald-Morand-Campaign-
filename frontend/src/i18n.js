@@ -65,6 +65,8 @@ i18n.use(initReactI18next).init({
         mediaText:
           "Watch featured campaign videos and moments from the community.",
         watchCampaignVideo: "Watch Campaign Video",
+        donationEmail: "Email",
+        zelleBadge: "Fastest way to give",
 
         donateTag: "Support the Campaign",
         donateTitle: "Help Fund Ronald Morand’s 2026 Election Campaign",
@@ -197,7 +199,8 @@ i18n.use(initReactI18next).init({
         mediaText:
           "Regardez des vidéos phares de la campagne et des moments vécus dans la communauté.",
         watchCampaignVideo: "Voir la vidéo de campagne",
-
+        donationEmail: "E-mail",
+        zelleBadge: "Le moyen le plus rapide de donner",
         donateTag: "Soutenir la campagne",
         donateTitle:
           "Aidez à financer la campagne électorale 2026 de Ronald Morand",
@@ -329,6 +332,8 @@ i18n.use(initReactI18next).init({
         mediaText:
           "Gade videyo kanpay yo ak moman enpòtan nan kominote a.",
         watchCampaignVideo: "Gade videyo kanpay la",
+        donationEmail: "Imèl",
+        zelleBadge: "Fason ki pi rapid pou bay",
 
         donateTag: "Sipòte kanpay la",
         donateTitle: "Ede finanse kanpay eleksyon Ronald Morand pou 2026",
@@ -347,55 +352,55 @@ i18n.use(initReactI18next).init({
         impact250: "Sipòte evènman kominotè yo",
         donorboxTag: "Don an liy an sekirite",
         donorboxTitle: "Fè kontribisyon ou jodi a",
-donorboxText:
-  "Bay don an liy atravè fòm don sekirize nou an. Sipò ou ede ranfòse sansibilizasyon, ogmante vizibilite, epi fè kanpay la avanse.",
-zelleTitle: "Don pa Zelle",
-zelleLabel: "Voye kontribisyon ou bay:",
-zelleNote:
-  "Sèvi ak Zelle pou sipò rapid ak dirèk pou kanpay la.",
-bankTitle: "Transfè labank",
-accountNumber: "Nimewo kont",
-routingNumber: "Nimewo routaj",
-bankNote:
-  "Tanpri verifye detay kont yo anvan ou voye don ou.",
-thankYouTitle: "Mèsi paske w ap sipòte kanpay la",
-thankYouText:
-  "Jenerozite ou ede ranfòse mouvman an, elaji sansibilizasyon nou, epi bati yon pi bon avni pou Ayiti atravè lidèchip ak aksyon kominotè.",
+        donorboxText:
+          "Bay don an liy atravè fòm don sekirize nou an. Sipò ou ede ranfòse sansibilizasyon, ogmante vizibilite, epi fè kanpay la avanse.",
+        zelleTitle: "Don pa Zelle",
+        zelleLabel: "Voye kontribisyon ou bay:",
+        zelleNote:
+          "Sèvi ak Zelle pou sipò rapid ak dirèk pou kanpay la.",
+        bankTitle: "Transfè labank",
+        accountNumber: "Nimewo kont",
+        routingNumber: "Nimewo routaj",
+        bankNote:
+          "Tanpri verifye detay kont yo anvan ou voye don ou.",
+        thankYouTitle: "Mèsi paske w ap sipòte kanpay la",
+        thankYouText:
+          "Jenerozite ou ede ranfòse mouvman an, elaji sansibilizasyon nou, epi bati yon pi bon avni pou Ayiti atravè lidèchip ak aksyon kominotè.",
 
-contactTag: "Kontakte kanpay la",
-contactTitle: "Pran kontak",
-contactSubtext:
-  "Ou gen yon kesyon, ou vle sipòte kanpay la, oswa ou vle konekte ak ekip la? Voye nou yon mesaj epi n ap reponn ou.",
-emailLabel: "Imèl",
-campaignSupport: "Sipò kanpay",
-campaignSupportText: "Sipòtè Ozetazini ak ann Ayiti",
-fullName: "Non konplè",
-emailAddress: "Adrès imèl",
-phone: "Telefòn",
-messagePlaceholder: "Ekri mesaj ou la...",
-sendMessage: "Voye mesaj",
+        contactTag: "Kontakte kanpay la",
+        contactTitle: "Pran kontak",
+        contactSubtext:
+          "Ou gen yon kesyon, ou vle sipòte kanpay la, oswa ou vle konekte ak ekip la? Voye nou yon mesaj epi n ap reponn ou.",
+        emailLabel: "Imèl",
+        campaignSupport: "Sipò kanpay",
+        campaignSupportText: "Sipòtè Ozetazini ak ann Ayiti",
+        fullName: "Non konplè",
+        emailAddress: "Adrès imèl",
+        phone: "Telefòn",
+        messagePlaceholder: "Ekri mesaj ou la...",
+        sendMessage: "Voye mesaj",
 
-supportTitle: "Sipòte kanpay la",
-supportText:
-  "Chak kontribisyon ede bati plis elan, ogmante sansibilizasyon, epi pote mesaj kanpay la bay plis moun nan kominote a.",
-support25: "Ede fè moun konnen kanpay la",
-support50: "Sipòte sansibilizasyon ak kominikasyon",
-support100: "Ede finanse evènman ak òganizasyon",
-contributeToday: "Kontribye jodi a",
+        supportTitle: "Sipòte kanpay la",
+        supportText:
+          "Chak kontribisyon ede bati plis elan, ogmante sansibilizasyon, epi pote mesaj kanpay la bay plis moun nan kominote a.",
+        support25: "Ede fè moun konnen kanpay la",
+        support50: "Sipòte sansibilizasyon ak kominikasyon",
+        support100: "Ede finanse evènman ak òganizasyon",
+        contributeToday: "Kontribye jodi a",
 
-countdownDays: "Jou",
-countdownHours: "Èdtan",
-countdownMinutes: "Minit",
-countdownSeconds: "Segonn",
+        countdownDays: "Jou",
+        countdownHours: "Èdtan",
+        countdownMinutes: "Minit",
+        countdownSeconds: "Segonn",
 
-heroStatYear: "Ane eleksyon",
-heroStatCommunity: "Kominote an premye",
-heroStatGrassroots: "Sipò baz",
-heroBadge: "Pou Ayiti",
-heroQuote:
-  "Lidèchip kòmanse ak sèvis, inite, ak angajman anvè pèp la.",
+        heroStatYear: "Ane eleksyon",
+        heroStatCommunity: "Kominote an premye",
+        heroStatGrassroots: "Sipò baz",
+        heroBadge: "Pou Ayiti",
+        heroQuote:
+          "Lidèchip kòmanse ak sèvis, inite, ak angajman anvè pèp la.",
 
-footerText: "© 2025 Kanpay Ronald Morand. Tout dwa rezève."
+        footerText: "© 2025 Kanpay Ronald Morand. Tout dwa rezève."
       }
     }
   },

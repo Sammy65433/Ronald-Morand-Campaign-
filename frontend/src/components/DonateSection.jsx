@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaUniversity,
@@ -5,8 +6,8 @@ import {
   FaCopy,
   FaLock,
   FaHandHoldingHeart,
-  FaEnvelope,
   FaArrowRight,
+  FaCheck,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import "../styles/DonateSection.css";
@@ -21,9 +22,12 @@ function DonateSection() {
   const donors = 0;
   const progress = (raised / goal) * 100;
 
-  const copyText = (text) => {
-    navigator.clipboard.writeText(text);
-    alert("Copied to clipboard");
+  const [copiedField, setCopiedField] = useState("");
+
+  const copyText = async (text, field) => {
+    await navigator.clipboard.writeText(text);
+    setCopiedField(field);
+    setTimeout(() => setCopiedField(""), 1800);
   };
 
   return (
@@ -175,10 +179,11 @@ function DonateSection() {
 
       <div className="donate-grid">
         <motion.div
-          className="donation-card glass-card"
+          className="donation-card glass-card zelle-highlight"
           initial={{ opacity: 0, x: -25 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
+          whileHover={{ y: -6, scale: 1.01 }}
         >
           <div className="donation-card-header">
             <FaMobileAlt className="donation-icon" />
@@ -190,12 +195,15 @@ function DonateSection() {
           <div className="donation-value-row">
             <p className="donation-value">267-616-3905</p>
             <button
-              onClick={() => copyText("267-616-3905")}
+              onClick={() => copyText("267-616-3905", "zelle")}
               className="copy-btn"
             >
-              <FaCopy />
+              {copiedField === "zelle" ? <FaCheck /> : <FaCopy />}
             </button>
           </div>
+
+          <div className="zelle-badge">{t("zelleBadge")}</div>
+
 
           <p className="donation-note">{t("zelleNote")}</p>
         </motion.div>
@@ -216,10 +224,10 @@ function DonateSection() {
             <div className="donation-value-row">
               <p className="donation-value">52709339541</p>
               <button
-                onClick={() => copyText("52709339541")}
+                onClick={() => copyText("52709339541", "account")}
                 className="copy-btn"
               >
-                <FaCopy />
+                {copiedField === "account" ? <FaCheck /> : <FaCopy />}
               </button>
             </div>
           </div>
@@ -229,23 +237,23 @@ function DonateSection() {
             <div className="donation-value-row">
               <p className="donation-value">021200025</p>
               <button
-                onClick={() => copyText("021200025")}
+                onClick={() => copyText("021200025", "routing")}
                 className="copy-btn"
               >
-                <FaCopy />
+                {copiedField === "routing" ? <FaCheck /> : <FaCopy />}
               </button>
             </div>
           </div>
 
           <div className="bank-row">
-            <span>Email</span>
+            <span>{t("donationEmail")}</span>
             <div className="donation-value-row">
               <p className="donation-value">Rmorand2026@gmail.com</p>
               <button
-                onClick={() => copyText("rmorand2026@gmail.com")}
+                onClick={() => copyText("rmorand2026@gmail.com", "email")}
                 className="copy-btn"
               >
-                <FaCopy />
+                {copiedField === "email" ? <FaCheck /> : <FaCopy />}
               </button>
             </div>
           </div>
