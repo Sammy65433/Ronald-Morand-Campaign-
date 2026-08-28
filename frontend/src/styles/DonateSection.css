@@ -4,6 +4,13 @@
   padding: 100px 24px 80px;
 }
 
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+}
+
 .donate-hero-shell {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -47,7 +54,8 @@
   align-items: center;
 }
 
-.donate-primary-btn {
+.donate-primary-btn,
+.donorbox-link-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -60,7 +68,8 @@
   transition: all 0.3s ease;
 }
 
-.donate-primary-btn:hover {
+.donate-primary-btn:hover,
+.donorbox-link-btn:hover {
   transform: translateY(-2px);
 }
 
@@ -80,13 +89,6 @@
 
 .donate-hero-visual {
   position: relative;
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
 }
 
 .donate-main-image-card {
@@ -237,16 +239,18 @@
   font-weight: 500;
 }
 
-.donorbox-section {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+.donorbox-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 28px;
-  align-items: start;
+  border-radius: 28px;
+  padding: 28px;
   margin-bottom: 42px;
 }
 
 .donorbox-copy {
-  padding-top: 10px;
+  max-width: 680px;
 }
 
 .donorbox-tag {
@@ -269,13 +273,6 @@
 .donorbox-copy p {
   color: #4b5563;
   line-height: 1.8;
-  max-width: 420px;
-}
-
-.donorbox-embed-wrapper {
-  border-radius: 28px;
-  padding: 22px;
-  overflow: hidden;
 }
 
 .donate-grid {
@@ -331,7 +328,7 @@
 }
 
 .donation-value {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #111827;
   word-break: break-all;
@@ -346,6 +343,7 @@
   border-radius: 12px;
   cursor: pointer;
   transition: 0.3s ease;
+  flex-shrink: 0;
 }
 
 .copy-btn:hover {
@@ -385,15 +383,16 @@
 
 @media (max-width: 1100px) {
   .donate-hero-shell,
-  .donorbox-section {
+  .donorbox-cta {
     grid-template-columns: 1fr;
   }
 
-  .donate-hero-text {
-    max-width: 100%;
+  .donorbox-cta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .donorbox-copy p {
+  .donate-hero-text {
     max-width: 100%;
   }
 }

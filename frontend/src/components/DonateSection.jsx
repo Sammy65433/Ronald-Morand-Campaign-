@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   FaUniversity,
@@ -6,6 +5,8 @@ import {
   FaCopy,
   FaLock,
   FaHandHoldingHeart,
+  FaEnvelope,
+  FaArrowRight,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import "../styles/DonateSection.css";
@@ -24,19 +25,6 @@ function DonateSection() {
     navigator.clipboard.writeText(text);
     alert("Copied to clipboard");
   };
-
-  useEffect(() => {
-    const existingScript = document.querySelector(
-      'script[src="https://donorbox.org/widgets.js"]'
-    );
-
-    if (!existingScript) {
-      const script = document.createElement("script");
-      script.src = "https://donorbox.org/widgets.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
 
   return (
     <section className="donate-page">
@@ -141,28 +129,28 @@ function DonateSection() {
         transition={{ duration: 0.7 }}
       >
         <div className="impact-card glass-card">
-          <h4>$25</h4>
+          <h4>$100</h4>
           <p>{t("impact25")}</p>
         </div>
 
         <div className="impact-card glass-card">
-          <h4>$50</h4>
+          <h4>$250</h4>
           <p>{t("impact50")}</p>
         </div>
 
         <div className="impact-card glass-card">
-          <h4>$100</h4>
+          <h4>$500</h4>
           <p>{t("impact100")}</p>
         </div>
 
         <div className="impact-card glass-card">
-          <h4>$250</h4>
+          <h4>$1000</h4>
           <p>{t("impact250")}</p>
         </div>
       </motion.div>
 
       <motion.div
-        className="donorbox-section"
+        className="donorbox-cta glass-card"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -173,13 +161,16 @@ function DonateSection() {
           <p>{t("donorboxText")}</p>
         </div>
 
-        <div className="donorbox-embed-wrapper glass-card">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `<dbox-widget campaign="ronald-morand-campaign-fund" type="donation_form" enable-auto-scroll="true"></dbox-widget>`,
-            }}
-          />
-        </div>
+        <a
+          href="https://donorbox.org/ronald-morand-campaign-fund"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="donorbox-link-btn"
+        >
+          <FaLock />
+          {t("donateSecurely")}
+          <FaArrowRight />
+        </a>
       </motion.div>
 
       <div className="donate-grid">
@@ -236,9 +227,22 @@ function DonateSection() {
           <div className="bank-row">
             <span>{t("routingNumber")}</span>
             <div className="donation-value-row">
-              <p className="donation-value">10212000250</p>
+              <p className="donation-value">021200025</p>
               <button
-                onClick={() => copyText("10212000250")}
+                onClick={() => copyText("021200025")}
+                className="copy-btn"
+              >
+                <FaCopy />
+              </button>
+            </div>
+          </div>
+
+          <div className="bank-row">
+            <span>Email</span>
+            <div className="donation-value-row">
+              <p className="donation-value">Rmorand2026@gmail.com</p>
+              <button
+                onClick={() => copyText("rmorand2026@gmail.com")}
                 className="copy-btn"
               >
                 <FaCopy />

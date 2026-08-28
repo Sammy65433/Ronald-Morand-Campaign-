@@ -6,9 +6,9 @@ function SupportSection() {
   const { t } = useTranslation();
 
   const cards = [
-    { amount: "$25", text: t("support25") },
-    { amount: "$50", text: t("support50") },
-    { amount: "$100", text: t("support100") },
+    { amount: "$250", text: t("support25") },
+    { amount: "$500", text: t("support50") },
+    { amount: "$1000", text: t("support100") },
   ];
 
   return (
