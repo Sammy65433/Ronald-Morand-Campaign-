@@ -27,7 +27,10 @@ function Navbar() {
         </li>
       </ul>
 
-      <LanguageSwitcher />
+      <div className="nav-language">
+        <span className="nav-language-label">Language</span>
+        <LanguageSwitcher />
+      </div>
     </nav>
   );
 }
