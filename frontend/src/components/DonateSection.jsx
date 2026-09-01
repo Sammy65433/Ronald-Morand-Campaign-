@@ -8,6 +8,9 @@ import {
   FaHandHoldingHeart,
   FaArrowRight,
   FaCheck,
+  FaBullhorn,
+  FaUsers,
+  FaGlobeAmericas,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import "../styles/DonateSection.css";
@@ -16,12 +19,6 @@ import communityImg from "../assets/Morandcomm2.jpg";
 
 function DonateSection() {
   const { t } = useTranslation();
-
-  const goal = 100000;
-  const raised = 0;
-  const donors = 0;
-  const progress = (raised / goal) * 100;
-
   const [copiedField, setCopiedField] = useState("");
 
   const copyText = async (text, field) => {
@@ -86,44 +83,45 @@ function DonateSection() {
       </motion.div>
 
       <motion.div
-        className="donate-stats-row"
-        initial={{ opacity: 0, y: 30 }}
+        className="zelle-top-card glass-card"
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.7 }}
+        whileHover={{ y: -4 }}
       >
-        <div className="donate-stat-card">
-          <span>{t("goal")}</span>
-          <h3>$100,000</h3>
+        <div className="zelle-top-header">
+          <div className="donation-card-header">
+            <FaMobileAlt className="donation-icon" />
+            <h3>{t("zelleTitle")}</h3>
+          </div>
+          <div className="zelle-badge">{t("zelleBadge")}</div>
         </div>
 
-        <div className="donate-stat-card">
-          <span>{t("raised")}</span>
-          <h3>{t("toBeUpdated")}</h3>
+        <p className="donation-label">{t("zelleLabel")}</p>
+
+        <div className="zelle-top-row">
+          <div className="donation-value-row zelle-top-value">
+            <p className="donation-value">267-616-3905</p>
+            <button
+              onClick={() => copyText("267-616-3905", "zelle")}
+              className="copy-btn"
+            >
+              {copiedField === "zelle" ? <FaCheck /> : <FaCopy />}
+            </button>
+          </div>
+
+          <a
+            href="https://donorbox.org/ronald-morand-campaign-fund"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="zelle-top-donorbox-btn"
+          >
+            <FaLock />
+            {t("donateSecurely")}
+          </a>
         </div>
 
-        <div className="donate-stat-card">
-          <span>{t("supporters")}</span>
-          <h3>{donors}</h3>
-        </div>
-      </motion.div>
-
-      <motion.div
-        className="progress-wrapper"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.8 }}
-      >
-        <div className="progress-top">
-          <span>{t("campaignProgress")}</span>
-          <span>{progress.toFixed(0)}%</span>
-        </div>
-
-        <div className="progress-bar">
-          <div
-            className="progress-fill"
-            style={{ width: `${progress}%` }}
-          ></div>
-        </div>
+        <p className="donation-note">{t("zelleNote")}</p>
       </motion.div>
 
       <motion.div
@@ -154,6 +152,31 @@ function DonateSection() {
       </motion.div>
 
       <motion.div
+        className="support-reasons-grid"
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.75 }}
+      >
+        <div className="support-reason-card glass-card">
+          <FaBullhorn className="support-reason-icon" />
+          <h3>Campaign Outreach</h3>
+          <p>Help expand communication, visibility, and voter engagement across the community.</p>
+        </div>
+
+        <div className="support-reason-card glass-card">
+          <FaUsers className="support-reason-icon" />
+          <h3>Community Support</h3>
+          <p>Strengthen local support efforts, events, and direct connection with families.</p>
+        </div>
+
+        <div className="support-reason-card glass-card">
+          <FaGlobeAmericas className="support-reason-icon" />
+          <h3>Future of L’Azile</h3>
+          <p>Invest in a vision centered on development, leadership, and long-term progress.</p>
+        </div>
+      </motion.div>
+
+      <motion.div
         className="donorbox-cta glass-card"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -177,37 +200,7 @@ function DonateSection() {
         </a>
       </motion.div>
 
-      <div className="donate-grid">
-        <motion.div
-          className="donation-card glass-card zelle-highlight"
-          initial={{ opacity: 0, x: -25 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          whileHover={{ y: -6, scale: 1.01 }}
-        >
-          <div className="donation-card-header">
-            <FaMobileAlt className="donation-icon" />
-            <h3>{t("zelleTitle")}</h3>
-          </div>
-
-          <p className="donation-label">{t("zelleLabel")}</p>
-
-          <div className="donation-value-row">
-            <p className="donation-value">267-616-3905</p>
-            <button
-              onClick={() => copyText("267-616-3905", "zelle")}
-              className="copy-btn"
-            >
-              {copiedField === "zelle" ? <FaCheck /> : <FaCopy />}
-            </button>
-          </div>
-
-          <div className="zelle-badge">{t("zelleBadge")}</div>
-
-
-          <p className="donation-note">{t("zelleNote")}</p>
-        </motion.div>
-
+      <div className="donate-grid single-bank-grid">
         <motion.div
           className="donation-card glass-card"
           initial={{ opacity: 0, x: 25 }}
@@ -222,7 +215,7 @@ function DonateSection() {
           <div className="bank-row">
             <span>{t("accountNumber")}</span>
             <div className="donation-value-row">
-              <p className="donation-value">5270933954</p>
+              <p className="donation-value">52709339541</p>
               <button
                 onClick={() => copyText("52709339541", "account")}
                 className="copy-btn"

@@ -3,6 +3,7 @@ import { FaGlobeAmericas, FaUsers, FaBullhorn } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import candidateImg1 from "../assets/Morand2.jpg";
 import candidateImg2 from "../assets/Morand4.jpeg";
+import featuredAboutImg from "../assets/Morand1.jpg";
 import { aboutBiography } from "../data/aboutBiography";
 import "../styles/AboutSection.css";
 
@@ -17,6 +18,9 @@ function AboutSection() {
 
   return (
     <section className="about-page-section">
+      <div className="about-bg-orb about-orb-one"></div>
+      <div className="about-bg-orb about-orb-two"></div>
+
       <div className="about-container">
         <motion.div
           className="about-content"
@@ -73,12 +77,21 @@ function AboutSection() {
       </motion.div>
 
       <motion.div
-        className="about-long-bio glass-card"
+        className="about-long-bio glass-article"
         initial={{ opacity: 0, y: 35 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
       >
-        <h3 className="about-long-bio-title">{t("aboutTitle")}</h3>
+        <div className="about-long-bio-header">
+          <div className="about-long-bio-title-wrap">
+            <span className="about-article-kicker">Campaign Biography</span>
+            <h3 className="about-long-bio-title">{t("aboutTitle")}</h3>
+          </div>
+
+          <div className="about-long-bio-image">
+            <img src={featuredAboutImg} alt="Ronald Morand featured portrait" />
+          </div>
+        </div>
 
         <div className="about-long-bio-text">
           {aboutBiography[currentLanguage]

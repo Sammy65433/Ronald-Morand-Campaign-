@@ -60,26 +60,26 @@
   overflow: hidden;
   border-radius: 28px;
 }
-
 .spotlight-img-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  background: #fff;
 }
+
 
 .spotlight-img-card.large {
   width: 72%;
   height: 530px;
   padding: 10px;
 }
-
 .spotlight-img-card.small {
   position: absolute;
   right: 0;
   bottom: 24px;
   width: 42%;
-  height: 250px;
+  min-height: 250px;
   padding: 8px;
 }
 

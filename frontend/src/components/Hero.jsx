@@ -48,7 +48,8 @@ function Hero() {
             rel="noopener noreferrer"
             className="hero-btn"
           >
-            <FaLock /> {t("donateNow")}
+            <FaLock />
+            {t("donateNow")}
           </a>
 
           <Link to="/about" className="hero-btn secondary-btn">
@@ -62,17 +63,19 @@ function Hero() {
           <div className="stat-box glass-card">
             <FaCalendarAlt className="stat-icon" />
             <h3>2026</h3>
-            <p>Election Year</p>
+            <p>{t("heroStatYear")}</p>
           </div>
+
           <div className="stat-box glass-card">
             <FaUsers className="stat-icon" />
             <h3>Haiti</h3>
-            <p>Community Focus</p>
+            <p>{t("heroStatCommunity")}</p>
           </div>
+
           <div className="stat-box glass-card">
             <FaHandHoldingHeart className="stat-icon" />
             <h3>100%</h3>
-            <p>Grassroots Support</p>
+            <p>{t("heroStatGrassroots")}</p>
           </div>
         </div>
       </motion.div>
@@ -92,14 +95,12 @@ function Hero() {
 
           <div className="floating-badge glass-card">
             <FaGlobeAmericas className="badge-icon" />
-            <span>🇭🇹 For Haiti</span>
+            <span>🇭🇹 {t("heroBadge")}</span>
           </div>
 
           <div className="quote-card glass-card">
             <FaQuoteLeft className="quote-icon" />
-            <p>
-              Leadership begins with service, unity, and a commitment to the people.
-            </p>
+            <p>{t("heroQuote")}</p>
           </div>
         </div>
       </motion.div>

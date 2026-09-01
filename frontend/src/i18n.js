@@ -10,6 +10,7 @@ i18n.use(initReactI18next).init({
         community: "Community",
         donate: "Donate",
         contact: "Contact",
+        heroQuote: "Leadership begins with service, unity, and a commitment to the people.",
 
         heroTag: "Election Campaign 2026",
         heroTitle: "Welcome!",
@@ -67,6 +68,12 @@ i18n.use(initReactI18next).init({
         watchCampaignVideo: "Watch Campaign Video",
         donationEmail: "Email",
         zelleBadge: "Fastest way to give",
+        supportReason1Title: "Campaign Outreach",
+        supportReason1Text: "Help expand communication, visibility, and voter engagement across the community.",
+        supportReason2Title: "Community Support",
+        supportReason2Text: "Strengthen local support efforts, events, and direct connection with families.",
+        supportReason3Title: "Future of L’Azile",
+        supportReason3Text: "Invest in a vision centered on development, leadership, and long-term progress.",
 
         donateTag: "Support the Campaign",
         donateTitle: "Help Fund Ronald Morand’s 2026 Election Campaign",
@@ -119,6 +126,11 @@ i18n.use(initReactI18next).init({
         support50: "Supports outreach and communication",
         support100: "Helps fund events and organizing",
         contributeToday: "Contribute Today",
+        contactCtaTitle: "Support the Campaign",
+        contactCtaText:
+          "Every message, every share, and every donation helps build momentum for Ronald Morand’s campaign in L’Azile.",
+        contactDonateNow: "Donate Now",
+
 
         countdownDays: "Days",
         countdownHours: "Hours",
@@ -142,6 +154,7 @@ i18n.use(initReactI18next).init({
         community: "Communauté",
         donate: "Faire un don",
         contact: "Contact",
+        heroQuote: "Le leadership commence par le service, l’unité et l’engagement envers le peuple.",
 
         heroTag: "Campagne électorale 2026",
         heroTitle: "Bienvenue !",
@@ -254,11 +267,22 @@ i18n.use(initReactI18next).init({
         support50: "Soutient la mobilisation et la communication",
         support100: "Aide à financer les événements et l'organisation",
         contributeToday: "Contribuer aujourd'hui",
+        supportReason1Title: "Mobilisation de campagne",
+        supportReason1Text: "Aidez à renforcer la communication, la visibilité et l’engagement des électeurs dans la communauté.",
+        supportReason2Title: "Soutien communautaire",
+        supportReason2Text: "Renforcez les efforts locaux, les événements et le lien direct avec les familles.",
+        supportReason3Title: "Avenir de L’Azile",
+        supportReason3Text: "Investissez dans une vision centrée sur le développement, le leadership et le progrès à long terme.",
 
         countdownDays: "Jours",
         countdownHours: "Heures",
         countdownMinutes: "Minutes",
         countdownSeconds: "Secondes",
+        contactCtaTitle: "Soutenir la campagne",
+        contactCtaText:
+          "Chaque message, chaque partage et chaque don contribuent à renforcer l’élan de la campagne de Ronald Morand à L’Azile.",
+        contactDonateNow: "Faire un don",
+
 
         heroStatYear: "Année électorale",
         heroStatCommunity: "Priorité à la communauté",
@@ -277,6 +301,7 @@ i18n.use(initReactI18next).init({
         community: "Kominote",
         donate: "Bay don",
         contact: "Kontak",
+        heroQuote: "Lidèchip kòmanse ak sèvis, inite, ak angajman anvè pèp la.",
 
         heroTag: "Kanpay Eleksyon 2026",
         heroTitle: "Byenveni!",
@@ -319,6 +344,12 @@ i18n.use(initReactI18next).init({
         spotlightPoint1: "Kominote an premye",
         spotlightPoint2: "Sipò mondyal",
         spotlightPoint3: "Lidèchip ki gade lavni",
+        supportReason1Title: "Sansibilizasyon kanpay la",
+        supportReason1Text: "Ede elaji kominikasyon, vizibilite, ak angajman elektè yo nan kominote a.",
+        supportReason2Title: "Sipò kominotè",
+        supportReason2Text: "Ranfòse efò lokal yo, evènman yo, ak koneksyon dirèk ak fanmi yo.",
+        supportReason3Title: "Avenir L’Azile",
+        supportReason3Text: "Envesti nan yon vizyon ki chita sou devlopman, lidèchip, ak pwogrè alontèm.",
 
         communityTag: "Enpak nan kominote a",
         communityTitle: "Gade kanpay la an aksyon",
@@ -392,6 +423,11 @@ i18n.use(initReactI18next).init({
         countdownHours: "Èdtan",
         countdownMinutes: "Minit",
         countdownSeconds: "Segonn",
+        contactCtaTitle: "Sipòte kanpay la",
+        contactCtaText:
+          "Chak mesaj, chak pataj, ak chak don ede bay plis fòs ak elan nan kanpay Ronald Morand nan L’Azile.",
+        contactDonateNow: "Bay don kounye a",
+
 
         heroStatYear: "Ane eleksyon",
         heroStatCommunity: "Kominote an premye",
