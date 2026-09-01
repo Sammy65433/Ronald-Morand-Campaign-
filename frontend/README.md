@@ -55,6 +55,7 @@ Purpose:
 - top navigation bar for the website
 - links to Home, About, Community, Donate, and Contact
 - contains language switcher support
+- includes a visible language label for translations
 - styled with premium dark glass navbar styling
 
 2. `Hero.jsx`
@@ -106,6 +107,7 @@ Purpose:
 - links to Donorbox hosted donation page
 - includes backup donation methods like Zelle, bank transfer, and campaign email
 - translation support added
+- animated Zelle section added
 - Donorbox embed removed in favor of cleaner CTA button
 
 8. `ContactSection.jsx`
@@ -209,6 +211,7 @@ Purpose:
 - hover effects
 - dark campaign header look
 - responsive nav layout
+- language label styling
 
 4. `Hero.css`
 Purpose:
@@ -255,6 +258,7 @@ Purpose:
 - impact cards
 - Donorbox button
 - support method cards
+- animated Zelle card
 - responsive donation page design
 
 9. `ContactSection.css`
@@ -339,6 +343,7 @@ Features Completed
 - donorbox donation link integration
 - multilingual support with i18n
 - language switcher setup
+- translation label in navbar
 - motion animations with Framer Motion
 - glassmorphism styling
 - responsive layouts
@@ -360,7 +365,7 @@ Translation is handled through:
 
 Things Still To Finish
 
-- connect custom domain fully when ready
+- connect custom GoDaddy domain
 - verify final donation processor setup with campaign owner
 - confirm all live donation/account details with owner
 - optional final polish on copy/content
@@ -408,6 +413,35 @@ Future Improvements
 - improve donor/supporter data collection if needed
 - optional admin dashboard later
 
+Next Step: Connect Custom Domain on GoDaddy
+
+Goal:
+- connect `rmorand2026.com` to the live Netlify site
+
+Current live site:
+- https://rmorand2026.netlify.app/
+
+High-level steps:
+1. Go to Netlify `Domain management`
+2. Add custom domain `rmorand2026.com`
+3. Go to GoDaddy DNS settings
+4. point the root domain and `www` to Netlify
+5. wait for DNS propagation
+6. verify HTTPS/SSL is active in Netlify
+7. test both:
+   - `https://rmorand2026.com`
+   - `https://www.rmorand2026.com`
+
+Typical DNS setup on GoDaddy:
+- `A` record for `@` pointing to Netlify
+- `CNAME` record for `www` pointing to your Netlify site hostname
+
+Important:
+- keep using `https://rmorand2026.netlify.app/` until DNS is fully connected
+- do not rely on the custom domain until Netlify confirms SSL and domain verification
+- Stripe payment processing has been connected through Donorbox and successfully tested.
+- Final remaining setup step is connecting the custom GoDaddy domain to Netlify.
+
 Notes
 
 - The site is designed for campaign fundraising and community storytelling
@@ -417,6 +451,5 @@ Notes
 - Domain connection is intentionally being saved for the final step
 - Payment processor verification should be completed by the campaign owner using their own banking and identity information
 ```
-
 
 

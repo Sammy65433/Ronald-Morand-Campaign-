@@ -3,10 +3,17 @@ import { FaGlobeAmericas, FaUsers, FaBullhorn } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import candidateImg1 from "../assets/Morand2.jpg";
 import candidateImg2 from "../assets/Morand4.jpeg";
+import { aboutBiography } from "../data/aboutBiography";
 import "../styles/AboutSection.css";
 
 function AboutSection() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const currentLanguage = i18n.language.startsWith("fr")
+    ? "fr"
+    : i18n.language.startsWith("ht")
+    ? "ht"
+    : "en";
 
   return (
     <section className="about-page-section">
@@ -19,11 +26,8 @@ function AboutSection() {
         >
           <p className="about-tag">{t("aboutTag")}</p>
           <h2>{t("aboutTitle")}</h2>
-
           <p className="about-lead">{t("aboutLead")}</p>
-
           <p>{t("aboutText1")}</p>
-
           <p>{t("aboutText2")}</p>
         </motion.div>
 
@@ -65,6 +69,24 @@ function AboutSection() {
           <FaGlobeAmericas className="about-icon" />
           <h3>{t("missionVisionTitle")}</h3>
           <p>{t("missionVisionText")}</p>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="about-long-bio glass-card"
+        initial={{ opacity: 0, y: 35 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
+      >
+        <h3 className="about-long-bio-title">{t("aboutTitle")}</h3>
+
+        <div className="about-long-bio-text">
+          {aboutBiography[currentLanguage]
+            .trim()
+            .split("\n\n")
+            .map((paragraph, index) => (
+              <p key={index}>{paragraph.trim()}</p>
+            ))}
         </div>
       </motion.div>
     </section>
