@@ -159,20 +159,20 @@ function DonateSection() {
       >
         <div className="support-reason-card glass-card">
           <FaBullhorn className="support-reason-icon" />
-          <h3>Campaign Outreach</h3>
-          <p>Help expand communication, visibility, and voter engagement across the community.</p>
+          <h3>{t("supportReason1Title")}</h3>
+          <p>{t("supportReason1Text")}</p>
         </div>
 
         <div className="support-reason-card glass-card">
           <FaUsers className="support-reason-icon" />
-          <h3>Community Support</h3>
-          <p>Strengthen local support efforts, events, and direct connection with families.</p>
+          <h3>{t("supportReason2Title")}</h3>
+          <p>{t("supportReason2Text")}</p>
         </div>
 
         <div className="support-reason-card glass-card">
           <FaGlobeAmericas className="support-reason-icon" />
-          <h3>Future of L’Azile</h3>
-          <p>Invest in a vision centered on development, leadership, and long-term progress.</p>
+          <h3>{t("supportReason3Title")}</h3>
+          <p>{t("supportReason3Text")}</p>
         </div>
       </motion.div>
 
@@ -241,7 +241,7 @@ function DonateSection() {
           <div className="bank-row">
             <span>{t("donationEmail")}</span>
             <div className="donation-value-row">
-              <p className="donation-value">Rmorand2026@gmail.com</p>
+              <p className="donation-value">rmorand2026@gmail.com</p>
               <button
                 onClick={() => copyText("rmorand2026@gmail.com", "email")}
                 className="copy-btn"
