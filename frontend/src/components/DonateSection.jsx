@@ -16,6 +16,7 @@ import { useTranslation } from "react-i18next";
 import "../styles/DonateSection.css";
 import ronaldImg from "../assets/Morand2.jpg";
 import communityImg from "../assets/Morandcomm2.jpg";
+import donationPic1 from "../assets/donationpic1.jpeg";
 
 function DonateSection() {
   const { t } = useTranslation();
@@ -182,6 +183,14 @@ function DonateSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
+        <div className="donorbox-cta-image-wrap">
+          <img
+            src={donationPic1}
+            alt="Support Ronald Morand campaign"
+            className="donorbox-cta-image"
+          />
+        </div>
+
         <div className="donorbox-copy">
           <p className="donorbox-tag">{t("donorboxTag")}</p>
           <h2>{t("donorboxTitle")}</h2>
@@ -241,7 +250,7 @@ function DonateSection() {
           <div className="bank-row">
             <span>{t("donationEmail")}</span>
             <div className="donation-value-row">
-              <p className="donation-value">rmorand2026@gmail.com</p>
+              <p className="donation-value">Rmorand2026@gmail.com</p>
               <button
                 onClick={() => copyText("rmorand2026@gmail.com", "email")}
                 className="copy-btn"

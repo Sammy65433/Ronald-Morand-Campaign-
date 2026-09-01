@@ -1,7 +1,7 @@
 .donate-page {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 100px 24px 80px;
+  padding: 180px 24px 80px;
 }
 
 .glass-card {
@@ -272,16 +272,34 @@
   color: #64748b;
   line-height: 1.8;
 }
-
 .donorbox-cta {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr auto;
   align-items: center;
   gap: 28px;
   border-radius: 28px;
-  padding: 28px;
+  padding: 32px;
   margin-bottom: 42px;
 }
+
+.donorbox-cta-image-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.donorbox-cta-image {
+  width: 100%;
+  max-width: 300px;
+  height: 360px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 20px;
+  background: white;
+  padding: 8px;
+}
+
 
 .donorbox-copy {
   max-width: 680px;
@@ -442,18 +460,22 @@
   }
 
   .donorbox-cta {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: flex-start;
   }
 
   .donate-hero-text {
     max-width: 100%;
   }
+
+  .donorbox-cta-image {
+    height: 240px;
+  }
 }
 
 @media (max-width: 900px) {
   .donate-page {
-    padding: 90px 20px 70px;
+    padding: 160px 20px 70px;
   }
 
   .donate-hero-text h1 {
@@ -470,7 +492,6 @@
     margin-top: 18px;
   }
 
-  .donate-stats-row,
   .donate-grid,
   .donate-impact-row,
   .support-reasons-grid {

@@ -44,7 +44,7 @@ function ContactSection() {
               <FaEnvelope className="contact-icon" />
               <div>
                 <h3>{t("emailLabel")}</h3>
-                <p>rmorand2026@gmail.com</p>
+                <p>Rmorand2026@gmail.com</p>
               </div>
             </div>
 
