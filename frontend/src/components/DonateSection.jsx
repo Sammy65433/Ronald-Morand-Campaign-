@@ -263,7 +263,7 @@ function DonateSection() {
           <div className="bank-row">
             <span>{t("donationEmail")}</span>
             <div className="donation-value-row">
-              <p className="donation-value">rmorand2026@gmail.com</p>
+              <p className="donation-value">Rmorand2026@gmail.com</p>
               <button
                 onClick={() => copyText("rmorand2026@gmail.com", "email")}
                 className="copy-btn"
