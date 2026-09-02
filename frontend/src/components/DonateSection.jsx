@@ -17,6 +17,7 @@ import "../styles/DonateSection.css";
 import ronaldImg from "../assets/Morand2.jpg";
 import communityImg from "../assets/Morandcomm2.jpg";
 import donationPic1 from "../assets/donationpic1.jpeg";
+import zelleQRCode2 from "../assets/zelleQRCode2.jpeg";
 
 function DonateSection() {
   const { t } = useTranslation();
@@ -98,31 +99,43 @@ function DonateSection() {
           <div className="zelle-badge">{t("zelleBadge")}</div>
         </div>
 
-        <p className="donation-label">{t("zelleLabel")}</p>
+        <div className="zelle-qr-layout">
+          <div className="zelle-qr-content">
+            <p className="donation-label">{t("zelleLabel")}</p>
 
-        <div className="zelle-top-row">
-          <div className="donation-value-row zelle-top-value">
-            <p className="donation-value">267-616-3905</p>
-            <button
-              onClick={() => copyText("267-616-3905", "zelle")}
-              className="copy-btn"
-            >
-              {copiedField === "zelle" ? <FaCheck /> : <FaCopy />}
-            </button>
+            <div className="zelle-top-row">
+              <div className="donation-value-row zelle-top-value">
+                <p className="donation-value">267-616-3905</p>
+                <button
+                  onClick={() => copyText("267-616-3905", "zelle")}
+                  className="copy-btn"
+                >
+                  {copiedField === "zelle" ? <FaCheck /> : <FaCopy />}
+                </button>
+              </div>
+
+              <a
+                href="https://donorbox.org/ronald-morand-campaign-fund"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="zelle-top-donorbox-btn"
+              >
+                <FaLock />
+                {t("donateSecurely")}
+              </a>
+            </div>
+
+            <p className="donation-note">{t("zelleNote")}</p>
           </div>
 
-          <a
-            href="https://donorbox.org/ronald-morand-campaign-fund"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="zelle-top-donorbox-btn"
-          >
-            <FaLock />
-            {t("donateSecurely")}
-          </a>
+          <div className="zelle-qr-card">
+            <img
+              src={zelleQRCode2}
+              alt="Zelle QR code"
+              className="zelle-qr-image"
+            />
+          </div>
         </div>
-
-        <p className="donation-note">{t("zelleNote")}</p>
       </motion.div>
 
       <motion.div
@@ -250,7 +263,7 @@ function DonateSection() {
           <div className="bank-row">
             <span>{t("donationEmail")}</span>
             <div className="donation-value-row">
-              <p className="donation-value">Rmorand2026@gmail.com</p>
+              <p className="donation-value">rmorand2026@gmail.com</p>
               <button
                 onClick={() => copyText("rmorand2026@gmail.com", "email")}
                 className="copy-btn"
