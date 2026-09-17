@@ -305,11 +305,16 @@ i18n.use(initReactI18next).init({
 
         heroTag: "Kanpay Eleksyon 2026",
         heroTitle: "Byenveni!",
-        heroTitle: "Byenvini Lan lansman kanpay Ronald Morand an",
+        heroTitle: "Byenvini lan lansman kanpay Ronald Morand an",
         electionDayLabel: "Jou eleksyon an:",
         electionDay: "13 Desanm 2026",
         donateNow: "Bay don kounye a",
         learnMore: "Aprann plis",
+        heroText: "Nou pa bliye wòl enpòtan fanm yo jwe nan devlopman dirab kominote natale yo.",
+        heroText2: "Mwen salye nou tout, mwen kontan avèk nou!",
+        heroText3: "Nou pa bliye wòl enpòtan fanm yo jwe nan devlopman dirab kominote natale yo.",
+        heroText4: "Mwen salye nou tout, mwen kontan avèk nou!",
+
 
         aboutTag: "Nan konsènan an",
         aboutTitle: "Konsènan Ronald Morand",
