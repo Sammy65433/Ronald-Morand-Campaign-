@@ -305,7 +305,7 @@ i18n.use(initReactI18next).init({
 
         heroTag: "Kanpay Eleksyon 2026",
         heroTitle: "Byenveni!",
-        heroTitle: "Byenvini lan lansman kanpay Ronald Morand an",
+        heroTitle: "Byenvini Lan lansman kanpay Ronald Morand an",
         electionDayLabel: "Jou eleksyon an:",
         electionDay: "13 Desanm 2026",
         donateNow: "Bay don kounye a",
