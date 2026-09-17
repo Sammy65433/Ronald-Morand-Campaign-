@@ -177,7 +177,7 @@ Sou inisyativ Ronald Morand, ak sousi pou byennèt kominote li, Asosyasyon pou D
 
 Youn nan pi gwo fòs Ronald Morand se jesyon transparan ak serye li fè ak kontribisyon yo ranmase. Fon sa yo envesti nan pwojè kominotè selon priyorite ak bezwen reyèl popilasyon an.
 
-Tout moun konnen komin L’Azile deja wè plizyè nan pitit li yo rive nan gwo fonksyon leta, ni elektif ni nominatif, tankou minis, senatè, depite, sekretè jeneral Palè Nasyonal, chèf kabinè ministè, oswa delege depatmantal. Men malgre gwo responsabilite sa yo, trè kèk ladan yo kite yon travay dirab pou komin natal yo.
+Tout moun konnen komin L’Azile deja wè plizyè nan pitit li yo rive nan gwo fonksyon leta, ni elektif ni nominatif, tankou minis, senatè, depite, sekretè jeneral Palè Nasyonal, chèf kabinè ministè, oswa delege depatmantal. Men malgre gwo responsabilite sa yo, trè kèk ladan yo pa kite yon travay dirab pou komin natal yo.
 
 Konsa, L’Azile rete andeyò anpil gwo pwojè devlopman, sa ki lakoz gwo desepsyon lakay anpil sitwayen ki te espere plis nan men reprezantan yo.
 
