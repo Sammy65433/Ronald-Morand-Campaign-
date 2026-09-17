@@ -13,10 +13,12 @@ i18n.use(initReactI18next).init({
         heroQuote: "Leadership begins with service, unity, and a commitment to the people.",
 
         heroTag: "Election Campaign 2026",
-        heroTitle: "Welcome!",
+        heroTitle: "Welcome to Ronald Morand’s Campaign",
         heroText:
           "Citizen committed to our community. A new vision, a new commitment, and new energy for the community. Your trust is our strength, our commitment, and our responsibility.",
         heroText2: "Real change in L'Asile is possible with Ronald Morand!",
+        heroText3: "We do not forget the important role women play in the sustainable development of their local communities.",
+        heroText4: "Greetings to everyone. I am happy to be with you all!",
         electionDayLabel: "Election Day:",
         electionDay: "December 13, 2026",
         donateNow: "Donate Now",
@@ -157,11 +159,9 @@ i18n.use(initReactI18next).init({
         heroQuote: "Le leadership commence par le service, l’unité et l’engagement envers le peuple.",
 
         heroTag: "Campagne électorale 2026",
-        heroTitle: "Bienvenue !",
-        heroText:
-          "Un citoyen engagé pour sa communauté. Une nouvelle vision, un nouvel engagement et une nouvelle énergie pour la communauté. Votre confiance est notre force, notre engagement et notre responsabilité.",
-        heroText2:
-          "Un vrai changement à L'Asile est possible avec Ronald Morand !",
+        heroTitle: "Bienvenue dans la campagne de Ronald Morand",
+        heroText: "Nous n’oublions pas le rôle important que jouent les femmes dans le développement durable de leurs communautés locales.",
+        heroText2: "Je vous salue tous et toutes, je suis heureux d’être avec vous !",
         electionDayLabel: "Jour de l'élection :",
         electionDay: "13 décembre 2026",
         donateNow: "Faire un don",
@@ -305,15 +305,15 @@ i18n.use(initReactI18next).init({
 
         heroTag: "Kanpay Eleksyon 2026",
         heroTitle: "Byenveni!",
-        heroText:
-          "Yon sitwayen ki angaje pou kominote li. Yon nouvo vizyon, yon nouvo angajman, ak nouvo enèji pou kominote a. Konfyans nou se fòs nou, angajman nou, ak responsablite nou.",
-        heroText2: "Vrè chanjman nan L'Asile posib ak Ronald Morand!",
+        heroText: "Nou blye yon “pa” Trè kek Madan yo PA ki te yon tea at dirab pou kominote la natal yo",
+        heroTitle: "Man byenvini an se kampay Ronald Morand lan",
+        heroText2: "Mw salye nou tout, mw kontan avek nou!!",
         electionDayLabel: "Jou eleksyon an:",
         electionDay: "13 Desanm 2026",
         donateNow: "Bay don kounye a",
         learnMore: "Aprann plis",
 
-        aboutTag: "Konsènan kanpay la",
+        aboutTag: "Nan konsènan an",
         aboutTitle: "Konsènan Ronald Morand",
         aboutLead:
           "Ronald Morand angaje pou sèvi pèp Ayisyen an ak lidèchip, entegrite, ak yon vizyon solid pou lavni.",
