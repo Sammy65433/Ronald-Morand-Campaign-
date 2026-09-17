@@ -110,3 +110,42 @@
   text-transform: uppercase;
   color: #cbd5e1;
 }
+
+.language-buttons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.language-buttons button {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: transparent;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.language-buttons button:hover,
+.language-buttons button.active {
+  background: #ffffff;
+  color: #202634;
+  border-color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .nav-language {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
