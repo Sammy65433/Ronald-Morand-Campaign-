@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../styles/Navbar.css";
-import LanguageSwitcher from "./LanguageSwitcher";
+import LanguageButtons from "./LanguageButtons";
 
 function Navbar() {
   const { t } = useTranslation();
@@ -28,8 +28,7 @@ function Navbar() {
       </ul>
 
       <div className="nav-language">
-        <span className="nav-language-label">Language</span>
-        <LanguageSwitcher />
+        <LanguageButtons />
       </div>
     </nav>
   );
