@@ -9,23 +9,48 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+
 import comm1 from "../assets/Morandcomm1.png";
 import comm2 from "../assets/Morandcomm2.jpg";
 import comm3 from "../assets/Morandcomm3.png";
 import comm4 from "../assets/Morandcomm4.jpg";
 import comm5 from "../assets/Morandcomm5.jpg";
 import comm6 from "../assets/Morandcomm7.jpg";
+
+import video1 from "../assets/campaignvideo1.mp4";
+import video2 from "../assets/campaignvideo2.mp4";
+import video3 from "../assets/campaignvideo3.mp4";
+
 import "../styles/CommunitySection.css";
 
 function CommunitySection() {
   const { t } = useTranslation();
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const videos = [
+  const facebookVideos = [
     "https://www.facebook.com/reel/1297876615583471",
     "https://www.facebook.com/reel/1450838646781207",
     "https://www.facebook.com/reel/1394611379099261",
     "https://www.facebook.com/reel/2095333927977322",
     "https://www.facebook.com/reel/769780002637864",
+  ];
+
+  const assetVideos = [
+    {
+      src: video1,
+      title: t("churchEventVideo1"),
+      orientation: "portrait",
+    },
+    {
+      src: video2,
+      title: t("churchEventVideo2"),
+      orientation: "portrait",
+    },
+    {
+      src: video3,
+      title: t("communityOutreachVideo"),
+      orientation: "landscape",
+    },
   ];
 
   const photos = [
@@ -60,8 +85,6 @@ function CommunitySection() {
       position: "center center",
     },
   ];
-
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -116,20 +139,33 @@ function CommunitySection() {
           style={{ objectPosition: photos[currentSlide].position }}
         />
 
-        <button className="slider-btn left" onClick={prevSlide}>
+        <button
+          type="button"
+          className="slider-btn left"
+          onClick={prevSlide}
+          aria-label="Previous photo"
+        >
           <FaChevronLeft />
         </button>
 
-        <button className="slider-btn right" onClick={nextSlide}>
+        <button
+          type="button"
+          className="slider-btn right"
+          onClick={nextSlide}
+          aria-label="Next photo"
+        >
           <FaChevronRight />
         </button>
 
         <div className="slider-dots">
           {photos.map((_, index) => (
             <button
+              type="button"
               key={index}
-              className={`slider-dot ${currentSlide === index ? "active" : ""}`}
+              className={`slider-dot ${currentSlide === index ? "active" : ""
+                }`}
               onClick={() => setCurrentSlide(index)}
+              aria-label={`Show photo ${index + 1}`}
             />
           ))}
         </div>
@@ -179,14 +215,57 @@ function CommunitySection() {
       </motion.div>
 
       <motion.div
+        className="video-section-title"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+        <FaPhotoVideo className="section-icon" />
+        <h3>{t("campaignVideosTitle")}</h3>
+        <p>{t("campaignVideosText")}</p>
+      </motion.div>
+
+      <motion.div
+        className="asset-video-grid"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        {assetVideos.map((video) => (
+          <div
+            className={`local-video-card ${video.orientation}`}
+            key={video.title}
+          >
+            <video controls preload="metadata" className="campaign-video">
+              <source src={video.src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <span>{video.title}</span>
+          </div>
+        ))}
+      </motion.div>
+
+      <motion.div
+        className="video-section-title facebook-video-title"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+        <FaFacebook className="section-icon" />
+        <h3>{t("facebookVideosTitle")}</h3>
+        <p>{t("facebookVideosText")}</p>
+      </motion.div>
+
+      <motion.div
         className="video-grid"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {videos.map((video, index) => (
+        {facebookVideos.map((video, index) => (
           <a
-            key={index}
+            key={video}
             href={video}
             target="_blank"
             rel="noopener noreferrer"
