@@ -11,7 +11,7 @@ i18n.use(initReactI18next).init({
         donate: "Donate",
         contact: "Contact",
         heroQuote: "Leadership begins with service, unity, and a commitment to the people.",
-
+        home: "Home",
         heroTag: "Election Campaign 2026",
         heroTitle: "Welcome to Ronald Morand’s Campaign",
         heroText:
@@ -164,7 +164,7 @@ i18n.use(initReactI18next).init({
         donate: "Faire un don",
         contact: "Contact",
         heroQuote: "Le leadership commence par le service, l’unité et l’engagement envers le peuple.",
-
+        home: "Accueil",
         heroTag: "Campagne électorale 2026",
         heroTitle: "Bienvenue dans la campagne de Ronald Morand",
         heroText: "Nous n’oublions pas le rôle important que jouent les femmes dans le développement durable de leurs communautés locales.",
@@ -316,7 +316,7 @@ i18n.use(initReactI18next).init({
         donate: "Bay don",
         contact: "Kontak",
         heroQuote: "Lidèchip kòmanse ak sèvis, inite, ak angajman anvè pèp la.",
-
+        home: "Akèy",
         heroTag: "Kanpay Eleksyon 2026",
         heroTitle: "Byenveni!",
         heroTitle: "Byenvini lan lansman kanpay Ronald Morand an",
@@ -472,4 +472,6 @@ i18n.use(initReactI18next).init({
 });
 
 export default i18n;
+
+
 

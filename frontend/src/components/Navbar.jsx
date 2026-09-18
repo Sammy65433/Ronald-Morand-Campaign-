@@ -9,8 +9,11 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <Link to="/">{t("campaign")}</Link>
-      </div>
+  <Link to="/" aria-label={t("home")}>
+    {t("home")}
+  </Link>
+</div>
+
 
       <ul className="nav-links">
         <li>
