@@ -56,7 +56,14 @@ i18n.use(initReactI18next).init({
         spotlightPoint2: "Global Support",
         spotlightPoint3: "Future-Focused Leadership",
 
-        communityTag: "Community Impact",
+        communityEventLabel: "Featured Event",
+communityEventTitle: "Burger King Grand Opening",
+communityEventText: "Ronald Morand is featured as an official sponsor. See the poster for the full program and event details.",
+communityEventDate: "October 9–11",
+        communityTextExtra:
+          "From local gatherings to community partnerships, these moments show the people and connections behind the campaign. Explore the photos and videos below to see the work in action.",
+        communityTextExtra2: "Community events bring people together. Explore the campaign moments below to learn more about the connections being built in L’Azile.",
+          communityTag: "Community Impact",
         communityTitle: "See the Campaign in Action",
         communityText:
           "Explore community outreach, campaign moments, and public support as Ronald Morand connects with people and shares his vision for Haiti.",
@@ -214,7 +221,14 @@ i18n.use(initReactI18next).init({
         facebookVideosTitle: "Plus de vidéos sur Facebook",
         facebookVideosText: "Découvrez d'autres vidéos de la campagne sur Facebook.",
 
-        communityTag: "Impact communautaire",
+        communityEventLabel: "Événement à la une",
+communityEventTitle: "Grande ouverture de Burger King",
+communityEventText: "Ronald Morand figure parmi les sponsors officiels. Consultez l’affiche pour le programme complet.",
+communityEventDate: "Du 9 au 11 octobre",
+        communityTextExtra:
+          "Des rencontres locales aux partenariats communautaires, ces moments mettent en lumière les personnes et les liens au cœur de la campagne. Découvrez les photos et vidéos ci-dessous.",
+        communityTextExtra2: "Les événements communautaires rassemblent les gens. Découvrez ci-dessous les moments de campagne et les liens qui se créent à L’Azile.",
+          communityTag: "Impact communautaire",
         communityTitle: "Voyez la campagne en action",
         communityText:
           "Découvrez les actions communautaires, les moments de campagne et le soutien du public alors que Ronald Morand rencontre la population et partage sa vision pour Haïti.",
@@ -375,7 +389,14 @@ i18n.use(initReactI18next).init({
         facebookVideosTitle: "Plis videyo sou Facebook",
         facebookVideosText: "Gade plis videyo kanpay la sou Facebook.",
 
-        communityTag: "Enpak nan kominote a",
+        communityEventLabel: "Evènman espesyal",
+communityEventTitle: "Gran ouvèti Burger King",
+communityEventText: "Ronald Morand parèt kòm yon sipòtè ofisyèl. Gade afich la pou tout detay pwogram nan.",
+communityEventDate: "9 pou rive 11 oktòb",
+        communityTextExtra:
+          "Depi rankont lokal yo rive nan patenarya kominotè yo, moman sa yo montre moun ak relasyon ki dèyè kanpay la. Gade foto ak videyo ki anba yo pou wè travay la an aksyon.",
+        communityTextExtra2: "Evènman kominotè yo rasanble moun. Gade moman kanpay ki anba yo pou dekouvri relasyon k ap bati nan L’Azile.",
+          communityTag: "Enpak nan kominote a",
         communityTitle: "Gade kanpay la an aksyon",
         communityText:
           "Dekouvri sansibilizasyon kominotè, moman kanpay la, ak sipò piblik pandan Ronald Morand ap rankontre moun epi pataje vizyon li pou Ayiti.",

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaFacebook,
@@ -16,24 +16,66 @@ import comm3 from "../assets/Morandcomm3.png";
 import comm4 from "../assets/Morandcomm4.jpg";
 import comm5 from "../assets/Morandcomm5.jpg";
 import comm6 from "../assets/Morandcomm7.jpg";
+import campaignImage1 from "../assets/campignimage1.jpeg";
 
 import video1 from "../assets/campaignvideo1.mp4";
 import video2 from "../assets/campaignvideo2.mp4";
 import video3 from "../assets/campaignvideo3.mp4";
+import video4 from "../assets/campaign_video4.mp4";
 
 import "../styles/CommunitySection.css";
+
+const photos = [
+  {
+    src: comm1,
+    alt: "Ronald Morand community photo 1",
+    position: "center center",
+  },
+  {
+    src: comm2,
+    alt: "Ronald Morand community photo 2",
+    position: "center 20%",
+  },
+  {
+    src: comm3,
+    alt: "Ronald Morand community photo 3",
+    position: "center center",
+  },
+  {
+    src: comm4,
+    alt: "Ronald Morand community photo 4",
+    position: "center 30%",
+  },
+  {
+    src: comm5,
+    alt: "Ronald Morand community photo 5",
+    position: "center 18%",
+  },
+  {
+    src: comm6,
+    alt: "Ronald Morand community photo 6",
+    position: "center center",
+  },
+  {
+    src: campaignImage1,
+    alt: "Ronald Morand campaign event poster",
+    position: "center center",
+  },
+];
+
+const facebookVideos = [
+  "https://www.facebook.com/reel/1297876615583471",
+  "https://www.facebook.com/reel/1450838646781207",
+  "https://www.facebook.com/reel/1394611379099261",
+  "https://www.facebook.com/reel/2095333927977322",
+  "https://www.facebook.com/reel/769780002637864",
+  "https://www.facebook.com/reel/1699163485545192",
+];
 
 function CommunitySection() {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const facebookVideos = [
-    "https://www.facebook.com/reel/1297876615583471",
-    "https://www.facebook.com/reel/1450838646781207",
-    "https://www.facebook.com/reel/1394611379099261",
-    "https://www.facebook.com/reel/2095333927977322",
-    "https://www.facebook.com/reel/769780002637864",
-  ];
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const assetVideos = [
     {
@@ -47,59 +89,48 @@ function CommunitySection() {
       orientation: "portrait",
     },
     {
+      src: video4,
+      title: t("communityOutreachVideo"),
+      orientation: "portrait",
+    },
+    {
       src: video3,
       title: t("communityOutreachVideo"),
       orientation: "landscape",
     },
   ];
 
-  const photos = [
-    {
-      src: comm1,
-      alt: "Ronald Morand community photo 1",
-      position: "center center",
-    },
-    {
-      src: comm2,
-      alt: "Ronald Morand community photo 2",
-      position: "center 20%",
-    },
-    {
-      src: comm3,
-      alt: "Ronald Morand community photo 3",
-      position: "center center",
-    },
-    {
-      src: comm4,
-      alt: "Ronald Morand community photo 4",
-      position: "center 30%",
-    },
-    {
-      src: comm5,
-      alt: "Ronald Morand community photo 5",
-      position: "center 18%",
-    },
-    {
-      src: comm6,
-      alt: "Ronald Morand community photo 6",
-      position: "center center",
-    },
-  ];
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % photos.length);
+    if (selectedImage) return;
+
+    const interval = window.setInterval(() => {
+      setCurrentSlide((previous) => (previous + 1) % photos.length);
     }, 3500);
 
-    return () => clearInterval(interval);
-  }, [photos.length]);
+    return () => window.clearInterval(interval);
+  }, [selectedImage]);
+
+  useEffect(() => {
+    if (!selectedImage) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImage]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % photos.length);
+    setCurrentSlide((previous) => (previous + 1) % photos.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + photos.length) % photos.length);
+    setCurrentSlide(
+      (previous) => (previous - 1 + photos.length) % photos.length
+    );
   };
 
   return (
@@ -113,15 +144,65 @@ function CommunitySection() {
         <div className="community-hero-text">
           <p className="community-tag">{t("communityTag")}</p>
           <h2>{t("communityTitle")}</h2>
-          <p>{t("communityText")}</p>
+
+          <div className="community-description">
+            <p>{t("communityText")}</p>
+            <p>{t("communityTextExtra")}</p>
+            <p>{t("communityTextExtra2")}</p>
+          </div>
+
+          <div className="community-event">
+            <span className="community-event-label">
+              {t("communityEventLabel")}
+            </span>
+            <h3>{t("communityEventTitle")}</h3>
+            <p>{t("communityEventText")}</p>
+            <strong>{t("communityEventDate")}</strong>
+          </div>
         </div>
 
         <div className="community-hero-visual">
           <div className="community-hero-image-card">
-            <img src={comm4} alt="Ronald Morand with community members" />
+            <button
+              type="button"
+              className="image-open-button"
+              onClick={() =>
+                setSelectedImage({
+                  src: comm4,
+                  alt: "Ronald Morand with community members",
+                })
+              }
+              aria-label="Expand community photo"
+            >
+              <img
+                src={comm4}
+                alt="Ronald Morand with community members"
+              />
+            </button>
+
             <div className="community-floating-pill">
               {t("communityFloatingPill")}
             </div>
+          </div>
+
+          <div className="community-hero-image-card">
+            <button
+              type="button"
+              className="image-open-button"
+              onClick={() =>
+                setSelectedImage({
+                  src: campaignImage1,
+                  alt: "Ronald Morand campaign event poster",
+                })
+              }
+              aria-label="Expand campaign event poster"
+            >
+              <img
+                src={campaignImage1}
+                alt="Ronald Morand campaign event poster"
+                className="community-poster"
+              />
+            </button>
           </div>
         </div>
       </motion.div>
@@ -132,12 +213,19 @@ function CommunitySection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.85 }}
       >
-        <img
-          src={photos[currentSlide].src}
-          alt={photos[currentSlide].alt}
-          className="community-slider-image"
-          style={{ objectPosition: photos[currentSlide].position }}
-        />
+        <button
+          type="button"
+          className="image-open-button slider-image-button"
+          onClick={() => setSelectedImage(photos[currentSlide])}
+          aria-label={`Expand ${photos[currentSlide].alt}`}
+        >
+          <img
+            src={photos[currentSlide].src}
+            alt={photos[currentSlide].alt}
+            className="community-slider-image"
+            style={{ objectPosition: photos[currentSlide].position }}
+          />
+        </button>
 
         <button
           type="button"
@@ -162,8 +250,9 @@ function CommunitySection() {
             <button
               type="button"
               key={index}
-              className={`slider-dot ${currentSlide === index ? "active" : ""
-                }`}
+              className={`slider-dot ${
+                currentSlide === index ? "active" : ""
+              }`}
               onClick={() => setCurrentSlide(index)}
               aria-label={`Show photo ${index + 1}`}
             />
@@ -191,13 +280,22 @@ function CommunitySection() {
         transition={{ duration: 0.9 }}
       >
         {photos.map((photo, index) => (
-          <div className="photo-card" key={index}>
+          <button
+            type="button"
+            className="photo-card"
+            key={photo.src}
+            onClick={() => setSelectedImage(photo)}
+            aria-label={`Expand photo ${index + 1}`}
+          >
             <img
               src={photo.src}
               alt={photo.alt}
+              className={
+                photo.src === campaignImage1 ? "gallery-poster" : ""
+              }
               style={{ objectPosition: photo.position }}
             />
-          </div>
+          </button>
         ))}
       </motion.div>
 
@@ -234,13 +332,12 @@ function CommunitySection() {
         {assetVideos.map((video) => (
           <div
             className={`local-video-card ${video.orientation}`}
-            key={video.title}
+            key={video.src}
           >
             <video controls preload="metadata" className="campaign-video">
               <source src={video.src} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-
             <span>{video.title}</span>
           </div>
         ))}
@@ -279,6 +376,29 @@ function CommunitySection() {
           </a>
         ))}
       </motion.div>
+
+      {selectedImage && (
+        <div
+          className="image-lightbox"
+          role="presentation"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            type="button"
+            className="lightbox-close"
+            onClick={() => setSelectedImage(null)}
+            aria-label="Close expanded image"
+          >
+            ×
+          </button>
+
+          <img
+            src={selectedImage.src}
+            alt={selectedImage.alt}
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 }

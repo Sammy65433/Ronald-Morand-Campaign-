@@ -1,6 +1,21 @@
 .footer {
-  padding: 20px;
+  padding: 24px 20px;
   text-align: center;
-  background: #0d1b2a;
-  color: white;
+  color: #ffffff;
+  background: linear-gradient(
+    to bottom,
+    #00209f 0%,
+    #00209f 50%,
+    #d21034 50%,
+    #d21034 100%
+  );
+  border-top: 2px solid #ffffff;
+}
+
+.footer a {
+  color: #ffffff;
+}
+
+.footer a:hover {
+  color: #ffe66d;
 }

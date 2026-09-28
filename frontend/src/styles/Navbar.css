@@ -7,11 +7,16 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(8, 17, 32, 0.9);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  border-bottom: 2px solid #ffffff;
+  background: linear-gradient(
+    to bottom,
+    #00209f 0%,
+    #00209f 50%,
+    #d21034 50%,
+    #d21034 100%
+  );
+  box-shadow: 0 10px 24px rgba(0, 32, 159, 0.18);
   color: #ffffff;
-  backdrop-filter: blur(16px);
 }
 
 .logo a {
@@ -24,8 +29,9 @@
   transition: color 0.25s ease;
 }
 
-.logo a:hover {
-  color: #7cc4ff;
+.logo a:hover,
+.nav-links a:hover {
+  color: #ffe66d;
 }
 
 .nav-links {
@@ -58,7 +64,7 @@
   width: 0;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #60a5fa, #38bdf8);
+  background: #ffe66d;
   content: "";
   transition: width 0.25s ease;
 }
