@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaFacebook,
@@ -26,36 +26,12 @@ import video4 from "../assets/campaign_video4.mp4";
 import "../styles/CommunitySection.css";
 
 const photos = [
-  {
-    src: comm1,
-    alt: "Ronald Morand community photo 1",
-    position: "center center",
-  },
-  {
-    src: comm2,
-    alt: "Ronald Morand community photo 2",
-    position: "center 20%",
-  },
-  {
-    src: comm3,
-    alt: "Ronald Morand community photo 3",
-    position: "center center",
-  },
-  {
-    src: comm4,
-    alt: "Ronald Morand community photo 4",
-    position: "center 30%",
-  },
-  {
-    src: comm5,
-    alt: "Ronald Morand community photo 5",
-    position: "center 18%",
-  },
-  {
-    src: comm6,
-    alt: "Ronald Morand community photo 6",
-    position: "center center",
-  },
+  { src: comm1, alt: "Ronald Morand community photo 1", position: "center center" },
+  { src: comm2, alt: "Ronald Morand community photo 2", position: "center 20%" },
+  { src: comm3, alt: "Ronald Morand community photo 3", position: "center center" },
+  { src: comm4, alt: "Ronald Morand community photo 4", position: "center 30%" },
+  { src: comm5, alt: "Ronald Morand community photo 5", position: "center 18%" },
+  { src: comm6, alt: "Ronald Morand community photo 6", position: "center center" },
   {
     src: campaignImage1,
     alt: "Ronald Morand campaign event poster",
@@ -74,30 +50,15 @@ const facebookVideos = [
 
 function CommunitySection() {
   const { t } = useTranslation();
+  const videoRowRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const assetVideos = [
-    {
-      src: video1,
-      title: t("churchEventVideo1"),
-      orientation: "portrait",
-    },
-    {
-      src: video2,
-      title: t("churchEventVideo2"),
-      orientation: "portrait",
-    },
-    {
-      src: video4,
-      title: t("communityOutreachVideo"),
-      orientation: "portrait",
-    },
-    {
-      src: video3,
-      title: t("communityOutreachVideo"),
-      orientation: "landscape",
-    },
+    { src: video1, title: t("churchEventVideo1"), orientation: "portrait" },
+    { src: video2, title: t("churchEventVideo2"), orientation: "portrait" },
+    { src: video4, title: t("communityOutreachVideo"), orientation: "portrait" },
+    { src: video3, title: t("communityOutreachVideo"), orientation: "landscape" },
   ];
 
   useEffect(() => {
@@ -114,9 +75,7 @@ function CommunitySection() {
     if (!selectedImage) return;
 
     const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        setSelectedImage(null);
-      }
+      if (event.key === "Escape") setSelectedImage(null);
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -131,6 +90,16 @@ function CommunitySection() {
     setCurrentSlide(
       (previous) => (previous - 1 + photos.length) % photos.length
     );
+  };
+
+  const scrollVideos = (direction) => {
+    const row = videoRowRef.current;
+    if (!row) return;
+
+    row.scrollBy({
+      left: direction * row.clientWidth,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -250,9 +219,7 @@ function CommunitySection() {
             <button
               type="button"
               key={index}
-              className={`slider-dot ${
-                currentSlide === index ? "active" : ""
-              }`}
+              className={`slider-dot ${currentSlide === index ? "active" : ""}`}
               onClick={() => setCurrentSlide(index)}
               aria-label={`Show photo ${index + 1}`}
             />
@@ -290,9 +257,7 @@ function CommunitySection() {
             <img
               src={photo.src}
               alt={photo.alt}
-              className={
-                photo.src === campaignImage1 ? "gallery-poster" : ""
-              }
+              className={photo.src === campaignImage1 ? "gallery-poster" : ""}
               style={{ objectPosition: photo.position }}
             />
           </button>
@@ -323,7 +288,30 @@ function CommunitySection() {
         <p>{t("campaignVideosText")}</p>
       </motion.div>
 
+      <div className="video-scroll-controls">
+        <span>Swipe left or right to see more videos</span>
+
+        <div className="video-scroll-buttons">
+          <button
+            type="button"
+            onClick={() => scrollVideos(-1)}
+            aria-label="Scroll to previous videos"
+          >
+            <FaChevronLeft /> Previous
+          </button>
+
+          <button
+            type="button"
+            onClick={() => scrollVideos(1)}
+            aria-label="Scroll to more videos"
+          >
+            More videos <FaChevronRight />
+          </button>
+        </div>
+      </div>
+
       <motion.div
+        ref={videoRowRef}
         className="asset-video-grid"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -391,7 +379,6 @@ function CommunitySection() {
           >
             ×
           </button>
-
           <img
             src={selectedImage.src}
             alt={selectedImage.alt}
