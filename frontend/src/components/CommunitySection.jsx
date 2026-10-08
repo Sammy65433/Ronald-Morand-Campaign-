@@ -22,6 +22,9 @@ import video1 from "../assets/campaignvideo1.mp4";
 import video2 from "../assets/campaignvideo2.mp4";
 import video3 from "../assets/campaignvideo3.mp4";
 import video4 from "../assets/campaign_video4.mp4";
+import campaignImage501 from "../assets/campaignimage501.jpeg";
+import video5 from "../assets/campaignvideo5.mp4";
+import video6 from "../assets/campiagnvideo6.mp4";
 
 import "../styles/CommunitySection.css";
 
@@ -37,6 +40,12 @@ const photos = [
     alt: "Ronald Morand campaign event poster",
     position: "center center",
   },
+  {
+    src: campaignImage501,
+    alt: "Ronald Morand campaign photo",
+    position: "center center",
+  },
+
 ];
 
 const facebookVideos = [
@@ -59,6 +68,17 @@ function CommunitySection() {
     { src: video2, title: t("churchEventVideo2"), orientation: "portrait" },
     { src: video4, title: t("communityOutreachVideo"), orientation: "portrait" },
     { src: video3, title: t("communityOutreachVideo"), orientation: "landscape" },
+    {
+      src: video5,
+      title: "Campaign Video 5",
+      orientation: "portrait",
+    },
+    {
+      src: video6,
+      title: "Campaign Video 6",
+      orientation: "portrait",
+    },
+
   ];
 
   useEffect(() => {
