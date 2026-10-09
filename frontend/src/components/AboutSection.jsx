@@ -6,6 +6,7 @@ import candidateImg2 from "../assets/Morand4.jpeg";
 import featuredAboutImg from "../assets/Morand1.jpg";
 import { aboutBiography } from "../data/aboutBiography";
 import "../styles/AboutSection.css";
+import { Link } from "react-router-dom";
 
 function AboutSection() {
   const { t, i18n } = useTranslation();
@@ -101,8 +102,15 @@ function AboutSection() {
               <p key={index}>{paragraph.trim()}</p>
             ))}
         </div>
-      </motion.div>
+              </motion.div>
+
+      <div className="about-donate">
+        <Link to="/donate" className="about-donate-button">
+          {t("donateNow")}
+        </Link>
+      </div>
     </section>
+
   );
 }
 

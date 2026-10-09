@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   FaFacebook,
@@ -64,21 +65,12 @@ function CommunitySection() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const assetVideos = [
-    { src: video1, title: t("churchEventVideo1"), orientation: "portrait" },
-    { src: video2, title: t("churchEventVideo2"), orientation: "portrait" },
+    { src: video6, title: t("campaignVideo6"), orientation: "landscape" },
+    { src: video5, title: t("campaignVideo5"), orientation: "landscape" },
     { src: video4, title: t("communityOutreachVideo"), orientation: "portrait" },
     { src: video3, title: t("communityOutreachVideo"), orientation: "landscape" },
-    {
-      src: video5,
-      title: "Campaign Video 5",
-      orientation: "portrait",
-    },
-    {
-      src: video6,
-      title: "Campaign Video 6",
-      orientation: "portrait",
-    },
-
+    { src: video2, title: t("churchEventVideo2"), orientation: "portrait" },
+    { src: video1, title: t("churchEventVideo1"), orientation: "portrait" },
   ];
 
   useEffect(() => {
@@ -123,6 +115,7 @@ function CommunitySection() {
   };
 
   return (
+    
     <section className="community-page">
       <motion.div
         className="community-hero"
@@ -139,6 +132,10 @@ function CommunitySection() {
             <p>{t("communityTextExtra")}</p>
             <p>{t("communityTextExtra2")}</p>
           </div>
+          <Link to="/donate" className="community-top-donate">
+  {t("donateNow")}
+</Link>
+
 
           <div className="community-event">
             <span className="community-event-label">
@@ -173,6 +170,7 @@ function CommunitySection() {
               {t("communityFloatingPill")}
             </div>
           </div>
+          
 
           <div className="community-hero-image-card">
             <button
@@ -315,19 +313,20 @@ function CommunitySection() {
           <button
             type="button"
             onClick={() => scrollVideos(-1)}
-            aria-label="Scroll to previous videos"
+            aria-label={t("previousVideos")}
           >
-            <FaChevronLeft /> Previous
+            <FaChevronLeft /> {t("previousVideos")}
           </button>
 
           <button
             type="button"
             onClick={() => scrollVideos(1)}
-            aria-label="Scroll to more videos"
+            aria-label={t("moreVideos")}
           >
-            More videos <FaChevronRight />
+            {t("moreVideos")} <FaChevronRight />
           </button>
         </div>
+
       </div>
 
       <motion.div
@@ -384,28 +383,40 @@ function CommunitySection() {
           </a>
         ))}
       </motion.div>
+<div className="community-donate">
+  <div>
+    <h3>{t("communityDonateTitle")}</h3>
+    <p>{t("communityDonateText")}</p>
+  </div>
 
-      {selectedImage && (
-        <div
-          className="image-lightbox"
-          role="presentation"
-          onClick={() => setSelectedImage(null)}
-        >
-          <button
-            type="button"
-            className="lightbox-close"
-            onClick={() => setSelectedImage(null)}
-            aria-label="Close expanded image"
-          >
-            ×
-          </button>
-          <img
-            src={selectedImage.src}
-            alt={selectedImage.alt}
-            onClick={(event) => event.stopPropagation()}
-          />
-        </div>
-      )}
+  <Link to="/donate" className="community-donate-button">
+    {t("donateNow")}
+  </Link>
+</div>
+
+{selectedImage && (
+  <div
+    className="image-lightbox"
+    role="presentation"
+    onClick={() => setSelectedImage(null)}
+  >
+    <button
+      type="button"
+      className="lightbox-close"
+      onClick={() => setSelectedImage(null)}
+      aria-label="Close expanded image"
+    >
+      ×
+    </button>
+    <img
+      src={selectedImage.src}
+      alt={selectedImage.alt}
+      onClick={(event) => event.stopPropagation()}
+    />
+  </div>
+)}
+
+      
     </section>
   );
 }
