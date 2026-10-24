@@ -1,76 +1,106 @@
 import { motion } from "framer-motion";
 import {
-  FaUsers,
   FaGlobeAmericas,
-  FaSeedling,
   FaQuoteLeft,
+  FaSeedling,
+  FaUsers,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+
 import candidateImg1 from "../assets/Morand2.jpg";
 import candidateImg2 from "../assets/Morand1.jpg";
 import "../styles/CampaignSpotlight.css";
 
+const reveal = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.15 },
+  transition: { duration: 0.65 },
+};
+
 function CampaignSpotlight() {
   const { t } = useTranslation();
 
+  const points = [
+    { icon: FaUsers, text: t("spotlightPoint1") },
+    { icon: FaGlobeAmericas, text: t("spotlightPoint2") },
+    { icon: FaSeedling, text: t("spotlightPoint3") },
+  ];
+
   return (
-    <section className="spotlight-section">
-      <div className="spotlight-bg-shape one"></div>
-      <div className="spotlight-bg-shape two"></div>
+    <section className="spotlight-section relative isolate overflow-hidden text-[#14213d]">
+      <div className="spotlight-grid pointer-events-none absolute inset-0" aria-hidden="true" />
 
-      <div className="spotlight-container">
-        <motion.div
-          className="spotlight-images"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="spotlight-img-card large glass-panel">
-            <img src={candidateImg1} alt="Ronald Morand portrait" />
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
+        <motion.div className="relative min-w-0 pb-14" {...reveal}>
+          <div className="overflow-hidden rounded-[26px] border border-[#00209f]/20 border-t-[5px] border-t-[#00209f] bg-white p-2.5 shadow-[0_24px_60px_rgba(0,32,159,0.13)]">
+            <img
+              src={candidateImg1}
+              alt="Ronald Morand portrait"
+              loading="lazy"
+              className="block h-[410px] w-full rounded-2xl object-contain bg-[#e8f3ff] sm:h-[540px]"
+            />
           </div>
 
-          <div className="spotlight-img-card small glass-panel">
-            <img src={candidateImg2} alt="Ronald Morand in community" />
+          <div className="absolute bottom-4 right-0 w-[38%] overflow-hidden rounded-2xl border border-[#00209f]/20 border-b-4 border-b-[#d21034] bg-white p-1.5 shadow-xl">
+            <img
+              src={candidateImg2}
+              alt="Ronald Morand in community"
+              loading="lazy"
+              className="block h-[150px] w-full rounded-xl object-cover object-top sm:h-[190px]"
+            />
           </div>
 
-          <div className="spotlight-quote glass-panel">
-            <FaQuoteLeft className="spotlight-quote-icon" />
-            <p>{t("spotlightQuote")}</p>
+          <div className="absolute bottom-0 left-4 max-w-[60%] rounded-xl border border-[#00209f]/15 border-l-4 border-l-[#d21034] bg-white/95 p-4 shadow-xl backdrop-blur">
+            <FaQuoteLeft className="mb-2 text-[#b50e2b]" aria-hidden="true" />
+            <p className="text-sm font-semibold leading-relaxed text-[#14213d] sm:text-base">
+              {t("spotlightQuote")}
+            </p>
           </div>
         </motion.div>
 
-        <motion.div
-          className="spotlight-content"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <p className="spotlight-tag">{t("spotlightTag")}</p>
-          <h2>{t("spotlightTitle")}</h2>
+        <motion.div className="min-w-0" {...reveal}>
+          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#00209f]/20 bg-white/80 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[#00209f] sm:text-sm">
+            <FaGlobeAmericas aria-hidden="true" />
+            {t("spotlightTag")}
+          </p>
 
-          <p className="spotlight-lead">{t("spotlightLead")}</p>
+          <h2 className="mb-6 font-['Outfit'] text-[clamp(2.7rem,5vw,5rem)] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#00209f]">
+            {t("spotlightTitle")}
+          </h2>
 
-          <p>{t("spotlightText1")}</p>
+          <div className="space-y-4 rounded-r-2xl border-l-4 border-[#d21034] bg-white/80 p-5 shadow-[0_12px_34px_rgba(0,32,159,0.07)]">
+            <p className="text-lg font-bold leading-relaxed text-[#14213d]">
+              {t("spotlightLead")}
+            </p>
+            <p className="leading-relaxed text-slate-700">
+              {t("spotlightText1")}
+            </p>
+            <p className="leading-relaxed text-slate-700">
+              {t("spotlightText2")}
+            </p>
+          </div>
 
-          <p>{t("spotlightText2")}</p>
-
-          <div className="spotlight-points">
-            <div className="point-card glass-panel">
-              <FaUsers className="point-icon" />
-              <span>{t("spotlightPoint1")}</span>
-            </div>
-
-            <div className="point-card glass-panel">
-              <FaGlobeAmericas className="point-icon" />
-              <span>{t("spotlightPoint2")}</span>
-            </div>
-
-            <div className="point-card glass-panel">
-              <FaSeedling className="point-icon" />
-              <span>{t("spotlightPoint3")}</span>
-            </div>
+          <div className="mt-7 grid gap-3">
+            {points.map(({ icon: Icon, text }, index) => (
+              <div
+                key={text}
+                className="flex items-center gap-4 rounded-xl border border-[#00209f]/15 bg-white/90 p-4 shadow-sm"
+              >
+                <span
+                  className={`grid h-11 w-11 shrink-0 place-items-center rounded-lg text-lg ${
+                    index === 2
+                      ? "bg-[#fff0f2] text-[#b50e2b]"
+                      : "bg-[#e8f2ff] text-[#00209f]"
+                  }`}
+                >
+                  <Icon aria-hidden="true" />
+                </span>
+                <span className="font-bold leading-snug text-[#14213d]">
+                  {text}
+                </span>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

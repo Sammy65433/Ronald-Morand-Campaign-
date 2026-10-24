@@ -1,514 +1,551 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-i18n.use(initReactI18next).init({
-  resources: {
-    en: {
-      translation: {
-        campaign: "Ronald Morand Campaign",
-        about: "About",
-        community: "Community",
-        donate: "Donate",
-        contact: "Contact",
-        heroQuote: "Leadership begins with service, unity, and a commitment to the people.",
-        home: "Home",
-        heroTag: "Election Campaign 2026",
-        heroTitle: "Welcome to Ronald Morand’s Campaign",
-        heroText:
-          "Citizen committed to our community. A new vision, a new commitment, and new energy for the community. Your trust is our strength, our commitment, and our responsibility.",
-        heroText2: "Real change in L'Asile is possible with Ronald Morand!",
-        heroText3: "We do not forget the important role women play in the sustainable development of their local communities.",
-        heroText4: "Greetings to everyone. I am happy to be with you all!",
-        electionDayLabel: "Election Day:",
-        electionDay: "December 13, 2026",
-        donateNow: "Donate Now",
-        learnMore: "Learn More",
+const resources = {
+  en: {
+    translation: {
+      campaign: "Ronald Morand Campaign",
+      home: "Home",
+      about: "About",
+      community: "Community",
+      donate: "Donate",
+      contact: "Contact",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
 
-        aboutTag: "About the Campaign",
-        aboutTitle: "About Ronald Morand",
-        aboutLead:
-          "Ronald Morand is committed to serving the people of Haiti with leadership, integrity, and a strong vision for the future.",
-        aboutText1:
-          "This campaign is focused on community support, progress, and creating opportunities for the people. It is built on the belief that real leadership starts by listening, serving, and bringing people together.",
-        aboutText2:
-          "With support from local communities and Haitians around the world, this campaign aims to inspire hope, strengthen outreach, and create meaningful impact ahead of Election Day.",
+      heroTag: "Election Campaign 2026",
+      heroTitle: "Welcome to Ronald Morand’s Campaign",
+      heroText:
+        "Citizen committed to our community. A new vision, a new commitment, and new energy for the community. Your trust is our strength, our commitment, and our responsibility.",
+      heroText2: "Real change in L’Asile is possible with Ronald Morand!",
+      heroText3:
+        "We do not forget the important role women play in the sustainable development of their local communities.",
+      heroText4: "Greetings to everyone. I am happy to be with you all!",
+      heroQuote:
+        "Leadership begins with service, unity, and a commitment to the people.",
+      heroBadge: "For Haiti",
+      heroStatYear: "Election Year",
+      heroStatCommunity: "Community Focus",
+      heroStatGrassroots: "Grassroots Support",
+      electionDayLabel: "Election Day:",
+      electionDay: "December 13, 2026",
+      countdownDays: "Days",
+      countdownHours: "Hours",
+      countdownMinutes: "Minutes",
+      countdownSeconds: "Seconds",
+      donateNow: "Donate Now",
+      learnMore: "Learn More",
 
-        missionCommunityTitle: "Community",
-        missionCommunityText:
-          "Building stronger relationships and empowering families through service and outreach.",
-        missionLeadershipTitle: "Leadership",
-        missionLeadershipText:
-          "Promoting honest leadership, clear communication, and meaningful representation.",
-        missionVisionTitle: "Vision",
-        missionVisionText:
-          "Creating a hopeful future for Haiti through progress, opportunity, and unity.",
+      aboutTag: "About the Campaign",
+      aboutTitle: "About Ronald Morand",
+      aboutLead:
+        "Ronald Morand is committed to serving the people of Haiti with leadership, integrity, and a strong vision for the future.",
+      aboutText1:
+        "This campaign is focused on community support, progress, and creating opportunities for the people. It is built on the belief that real leadership starts by listening, serving, and bringing people together.",
+      aboutText2:
+        "With support from local communities and Haitians around the world, this campaign aims to inspire hope, strengthen outreach, and create meaningful impact ahead of Election Day.",
+      campaignBiography: "Campaign Biography",
+      missionCommunityTitle: "Community",
+      missionCommunityText:
+        "Building stronger relationships and empowering families through service and outreach.",
+      missionLeadershipTitle: "Leadership",
+      missionLeadershipText:
+        "Promoting honest leadership, clear communication, and meaningful representation.",
+      missionVisionTitle: "Vision",
+      missionVisionText:
+        "Creating a hopeful future for Haiti through progress, opportunity, and unity.",
 
-        spotlightTag: "A Vision for Haiti",
-        spotlightTitle: "Leadership Rooted in Community",
-        spotlightLead:
-          "Ronald Morand’s campaign is focused on service, unity, and progress.",
-        spotlightText1:
-          "This movement is about empowering communities, creating opportunity, and building a better future for Haiti.",
-        spotlightText2:
-          "With support from people at home and abroad, this campaign can expand its outreach, strengthen its message, and reach more families across the country.",
-        spotlightQuote: "Building hope through service, unity, and action.",
-        spotlightPoint1: "Community First",
-        spotlightPoint2: "Global Support",
-        spotlightPoint3: "Future-Focused Leadership",
-communityDonateTitle: "Support the Campaign",
-communityDonateText: "Help Ronald Morand connect with more people and share his vision for L’Azile.",
-        communityEventLabel: "Featured Event",
-        communityEventTitle: "Burger King Grand Opening",
-        communityEventText: "Ronald Morand is featured as an official sponsor. See the poster for the full program and event details.",
-        communityEventDate: "October 9–11",
-        communityTextExtra:
-          "From local gatherings to community partnerships, these moments show the people and connections behind the campaign. Explore the photos and videos below to see the work in action.",
-        communityTextExtra2: "Community events bring people together. Explore the campaign moments below to learn more about the connections being built in L’Azile.",
-        communityTag: "Community Impact",
-        communityTitle: "See the Campaign in Action",
-        communityText:
-          "Explore community outreach, campaign moments, and public support as Ronald Morand connects with people and shares his vision for Haiti.",
-        communityFloatingPill: "Real moments. Real support.",
-        communityPhotosTitle: "Community Photos",
-        communityPhotosText:
-          "Moments of outreach, connection, and support from the campaign trail.",
-        mediaTitle: "Media & Campaign Highlights",
-        mediaText:
-          "Watch featured campaign videos and moments from the community.",
-        watchCampaignVideo: "Watch Campaign Video",
-        donationEmail: "Email",
-        zelleBadge: "Fastest way to give",
-        supportReason1Title: "Campaign Outreach",
-        supportReason1Text: "Help expand communication, visibility, and voter engagement across the community.",
-        supportReason2Title: "Community Support",
-        supportReason2Text: "Strengthen local support efforts, events, and direct connection with families.",
-        supportReason3Title: "Future of L’Azile",
-        supportReason3Text: "Invest in a vision centered on development, leadership, and long-term progress.",
+      spotlightTag: "A Vision for Haiti",
+      spotlightTitle: "Leadership Rooted in Community",
+      spotlightLead:
+        "Ronald Morand’s campaign is focused on service, unity, and progress.",
+      spotlightText1:
+        "This movement is about empowering communities, creating opportunity, and building a better future for Haiti.",
+      spotlightText2:
+        "With support from people at home and abroad, this campaign can expand its outreach, strengthen its message, and reach more families across the country.",
+      spotlightQuote: "Building hope through service, unity, and action.",
+      spotlightPoint1: "Community First",
+      spotlightPoint2: "Global Support",
+      spotlightPoint3: "Future-Focused Leadership",
 
-        donateTag: "Support the Campaign",
-        donateTitle: "Help Fund Ronald Morand’s 2026 Election Campaign",
-        donateSubtext:
-          "Every donation helps expand outreach, strengthen community support, and move this campaign forward in Haiti. Your contribution helps power a message of leadership, unity, and lasting impact.",
-        donateSecurely: "Donate Securely",
-        donateImpactChip: "Every contribution makes a difference",
-        goal: "Goal",
-        raised: "Raised",
-        supporters: "Supporters",
-        toBeUpdated: "To Be Updated",
-        campaignProgress: "Campaign Progress",
-        impact25: "Support the movement",
-        impact50: "Help us reach more voters",
-        impact100: "Fund campaign outreach",
-        impact250: "Support community events",
-        donorboxTag: "Secure Online Giving",
-        donorboxTitle: "Make Your Contribution Today",
-        donorboxText:
-          "Give online through our secure donation form. Your support helps strengthen outreach, grow visibility, and move the campaign forward.",
-        zelleTitle: "Zelle Donation",
-        zelleLabel: "Send your contribution to:",
-        zelleNote: "Use Zelle for fast and direct campaign support.",
-        bankTitle: "Bank Transfer",
-        accountNumber: "Account Number",
-        routingNumber: "Routing Number",
-        bankNote:
-          "Please confirm account details before sending your donation.",
-        thankYouTitle: "Thank You for Supporting the Campaign",
-        thankYouText:
-          "Your generosity helps strengthen the movement, expand our outreach, and build a better future for Haiti through leadership and community action.",
-        campaignVideosTitle: "Campaign Videos",
-        campaignVideosText: "Watch videos from church events and community outreach.",
-        churchEventVideo1: "Supporting Local Church Events",
-        churchEventVideo2: "Connecting With Our Church Community",
-        communityOutreachVideo: "Community Outreach in Action",
-        facebookVideosTitle: "More Videos on Facebook",
-        facebookVideosText: "View additional campaign videos on Facebook.",
-        campaignVideo5: "Campaign Video 5",
-        campaignVideo6: "Campaign Video 6",
-        swipeVideos: "Swipe left or right to see more videos",
-        previousVideos: "Previous",
-        moreVideos: "More videos",
-        contactTag: "Contact the Campaign",
-        contactTitle: "Get in Touch",
-        contactSubtext:
-          "Have a question, want to support the campaign, or looking to connect with the team? Send us a message and we will get back to you.",
-        emailLabel: "Email",
-        campaignSupport: "Campaign Support",
-        campaignSupportText: "Supporters across the U.S. and Haiti",
-        fullName: "Full Name",
-        emailAddress: "Email Address",
-        phone: "Phone",
-        messagePlaceholder: "Write your message here...",
-        sendMessage: "Send Message",
+      communityTag: "Community Impact",
+      communityTitle: "See the Campaign in Action",
+      communityText:
+        "Explore community outreach, campaign moments, and public support as Ronald Morand connects with people and shares his vision for Haiti.",
+      communityTextExtra:
+        "From local gatherings to community partnerships, these moments show the people and connections behind the campaign. Explore the photos and videos below to see the work in action.",
+      communityTextExtra2:
+        "Community events bring people together. Explore the campaign moments below to learn more about the connections being built in L’Azile.",
+      communityFloatingPill: "Real moments. Real support.",
+      communityEventLabel: "Featured Event",
+      communityEventTitle: "Burger King Grand Opening",
+      communityEventText:
+        "Ronald Morand is featured as an official sponsor. See the poster for the full program and event details.",
+      communityEventDate: "October 9–11",
+      communityPhotosTitle: "Community Photos",
+      communityPhotosText:
+        "Moments of outreach, connection, and support from the campaign trail.",
+      mediaTitle: "Media & Campaign Highlights",
+      mediaText:
+        "Watch featured campaign videos and moments from the community.",
+      campaignVideosTitle: "Campaign Videos",
+      campaignVideosText:
+        "Watch videos from church events and community outreach.",
+      churchEventVideo1: "Supporting Local Church Events",
+      churchEventVideo2: "Connecting With Our Church Community",
+      communityOutreachVideo: "Community Outreach in Action",
+      campaignVideo5: "Campaign Video 5",
+      campaignVideo6: "Campaign Video 6",
+      swipeVideos: "Swipe left or right to see more videos",
+      previousVideos: "Previous",
+      moreVideos: "More videos",
+      facebookVideosTitle: "More Videos on Facebook",
+      facebookVideosText: "View additional campaign videos on Facebook.",
+      watchCampaignVideo: "Watch Campaign Video",
+      watchOnFacebook: "Watch on Facebook",
+      communityDonateTitle: "Support the Campaign",
+      communityDonateText:
+        "Help Ronald Morand connect with more people and share his vision for L’Azile.",
 
-        supportTitle: "Support the Campaign",
-        supportText:
-          "Every contribution helps build momentum, increase outreach, and bring the campaign message to more people across the community.",
-        support25: "Helps spread campaign awareness",
-        support50: "Supports outreach and communication",
-        support100: "Helps fund events and organizing",
-        contributeToday: "Contribute Today",
-        contactCtaTitle: "Support the Campaign",
-        contactCtaText:
-          "Every message, every share, and every donation helps build momentum for Ronald Morand’s campaign in L’Azile.",
-        contactDonateNow: "Donate Now",
+      donateTag: "Support the Campaign",
+      donateTitle: "Help Fund Ronald Morand’s 2026 Election Campaign",
+      donateSubtext:
+        "Every donation helps expand outreach, strengthen community support, and move this campaign forward in Haiti. Your contribution helps power a message of leadership, unity, and lasting impact.",
+      donateSecurely: "Donate Securely",
+      donateImpactChip: "Every contribution makes a difference",
+      goal: "Goal",
+      raised: "Raised",
+      supporters: "Supporters",
+      toBeUpdated: "To Be Updated",
+      campaignProgress: "Campaign Progress",
+      impact25: "Support the movement",
+      impact50: "Help us reach more voters",
+      impact100: "Fund campaign outreach",
+      impact250: "Support community events",
+      donorboxTag: "Secure Online Giving",
+      donorboxTitle: "Make Your Contribution Today",
+      donorboxText:
+        "Give online through our secure donation form. Your support helps strengthen outreach, grow visibility, and move the campaign forward.",
+      zelleTitle: "Zelle Donation",
+      zelleLabel: "Send your contribution to:",
+      zelleBadge: "Fastest way to give",
+      zelleNote: "Use Zelle for fast and direct campaign support.",
+      bankTitle: "Bank Transfer",
+      accountNumber: "Account Number",
+      routingNumber: "Routing Number",
+      donationEmail: "Email",
+      bankNote: "Please confirm account details before sending your donation.",
+      thankYouTitle: "Thank You for Supporting the Campaign",
+      thankYouText:
+        "Your generosity helps strengthen the movement, expand our outreach, and build a better future for Haiti through leadership and community action.",
+      supportReason1Title: "Campaign Outreach",
+      supportReason1Text:
+        "Help expand communication, visibility, and voter engagement across the community.",
+      supportReason2Title: "Community Support",
+      supportReason2Text:
+        "Strengthen local support efforts, events, and direct connection with families.",
+      supportReason3Title: "Future of L’Azile",
+      supportReason3Text:
+        "Invest in a vision centered on development, leadership, and long-term progress.",
 
+      contactTag: "Contact the Campaign",
+      contactTitle: "Get in Touch",
+      contactSubtext:
+        "Have a question, want to support the campaign, or looking to connect with the team? Send us a message and we will get back to you.",
+      emailLabel: "Email",
+      campaignSupport: "Campaign Support",
+      campaignSupportText: "Supporters across the U.S. and Haiti",
+      fullName: "Full Name",
+      emailAddress: "Email Address",
+      phone: "Phone",
+      messagePlaceholder: "Write your message here...",
+      sendMessage: "Send Message",
+      sending: "Sending...",
+      messageSent: "Thank you. Your message has been sent successfully.",
+      contactCtaTitle: "Support the Campaign",
+      contactCtaText:
+        "Every message, every share, and every donation helps build momentum for Ronald Morand’s campaign in L’Azile.",
+      contactDonateNow: "Donate Now",
 
-        countdownDays: "Days",
-        countdownHours: "Hours",
-        countdownMinutes: "Minutes",
-        countdownSeconds: "Seconds",
+      supportTitle: "Support the Campaign",
+      supportText:
+        "Every contribution helps build momentum, increase outreach, and bring the campaign message to more people across the community.",
+      support25: "Helps spread campaign awareness",
+      support50: "Supports outreach and communication",
+      support100: "Helps fund events and organizing",
+      contributeToday: "Contribute Today",
 
-        heroStatYear: "Election Year",
-        heroStatCommunity: "Community Focus",
-        heroStatGrassroots: "Grassroots Support",
-        heroBadge: "For Haiti",
-        heroQuote:
-          "Leadership begins with service, unity, and a commitment to the people.",
-
-        footerText: "© 2025 Ronald Morand Campaign. All rights reserved."
-      }
+      footerText: "Ronald Morand Campaign. All rights reserved.",
     },
-    fr: {
-      translation: {
-        campaign: "Campagne Ronald Morand",
-        about: "À propos",
-        community: "Communauté",
-        donate: "Faire un don",
-        contact: "Contact",
-        heroQuote: "Le leadership commence par le service, l’unité et l’engagement envers le peuple.",
-        home: "Accueil",
-        heroTag: "Campagne électorale 2026",
-        heroTitle: "Bienvenue dans la campagne de Ronald Morand",
-        heroText: "Nous n’oublions pas le rôle important que jouent les femmes dans le développement durable de leurs communautés locales.",
-        heroText2: "Je vous salue tous et toutes, je suis heureux d’être avec vous !",
-        electionDayLabel: "Jour de l'élection :",
-        electionDay: "13 décembre 2026",
-        donateNow: "Faire un don",
-        learnMore: "En savoir plus",
-
-        aboutTag: "À propos de la campagne",
-        aboutTitle: "À propos de Ronald Morand",
-        aboutLead:
-          "Ronald Morand s'engage à servir le peuple haïtien avec leadership, intégrité et une vision forte pour l'avenir.",
-        aboutText1:
-          "Cette campagne est axée sur le soutien communautaire, le progrès et la création d'opportunités pour la population. Elle repose sur la conviction qu'un vrai leadership commence par l'écoute, le service et le rassemblement des gens.",
-        aboutText2:
-          "Avec le soutien des communautés locales et des Haïtiens du monde entier, cette campagne vise à inspirer l'espoir, renforcer la mobilisation et créer un impact concret avant le jour de l'élection.",
-
-        missionCommunityTitle: "Communauté",
-        missionCommunityText:
-          "Renforcer les relations et soutenir les familles par le service et la proximité.",
-        missionLeadershipTitle: "Leadership",
-        missionLeadershipText:
-          "Promouvoir un leadership honnête, une communication claire et une représentation significative.",
-        missionVisionTitle: "Vision",
-        missionVisionText:
-          "Créer un avenir porteur d'espoir pour Haïti grâce au progrès, aux opportunités et à l'unité.",
-
-        spotlightTag: "Une vision pour Haïti",
-        spotlightTitle: "Un leadership enraciné dans la communauté",
-        spotlightLead:
-          "La campagne de Ronald Morand est axée sur le service, l'unité et le progrès.",
-        spotlightText1:
-          "Ce mouvement vise à renforcer les communautés, créer des opportunités et bâtir un avenir meilleur pour Haïti.",
-        spotlightText2:
-          "Avec le soutien des personnes au pays et à l'étranger, cette campagne peut élargir sa portée, renforcer son message et toucher davantage de familles à travers le pays.",
-        spotlightQuote:
-          "Construire l'espoir par le service, l'unité et l'action.",
-        spotlightPoint1: "La communauté d'abord",
-        spotlightPoint2: "Soutien mondial",
-        spotlightPoint3: "Leadership tourné vers l'avenir",
-        campaignVideosTitle: "Vidéos de la campagne",
-        campaignVideosText: "Regardez des vidéos d'événements religieux et d'actions communautaires.",
-        churchEventVideo1: "Soutien aux événements de l'église locale",
-        churchEventVideo2: "Créer des liens avec notre communauté religieuse",
-        communityOutreachVideo: "L'action communautaire en action",
-        facebookVideosTitle: "Plus de vidéos sur Facebook",
-        facebookVideosText: "Découvrez d'autres vidéos de la campagne sur Facebook.",
-communityDonateTitle: "Soutenez la campagne",
-communityDonateText: "Aidez Ronald Morand à rencontrer davantage de personnes et à partager sa vision pour L’Azile.",
-        communityEventLabel: "Événement à la une",
-        communityEventTitle: "Grande ouverture de Burger King",
-        communityEventText: "Ronald Morand figure parmi les sponsors officiels. Consultez l’affiche pour le programme complet.",
-        communityEventDate: "Du 9 au 11 octobre",
-        communityTextExtra:
-          "Des rencontres locales aux partenariats communautaires, ces moments mettent en lumière les personnes et les liens au cœur de la campagne. Découvrez les photos et vidéos ci-dessous.",
-        communityTextExtra2: "Les événements communautaires rassemblent les gens. Découvrez ci-dessous les moments de campagne et les liens qui se créent à L’Azile.",
-        communityTag: "Impact communautaire",
-        communityTitle: "Voyez la campagne en action",
-        communityText:
-          "Découvrez les actions communautaires, les moments de campagne et le soutien du public alors que Ronald Morand rencontre la population et partage sa vision pour Haïti.",
-        communityFloatingPill: "Des moments vrais. Un vrai soutien.",
-        communityPhotosTitle: "Photos de la communauté",
-        communityPhotosText:
-          "Moments de proximité, de lien et de soutien sur le terrain.",
-        mediaTitle: "Médias et temps forts de la campagne",
-        mediaText:
-          "Regardez des vidéos phares de la campagne et des moments vécus dans la communauté.",
-        watchCampaignVideo: "Voir la vidéo de campagne",
-        donationEmail: "E-mail",
-        campaignVideo5: "Vidéo de campagne 5",
-        campaignVideo6: "Vidéo de campagne 6",
-        swipeVideos: "Balayez vers la gauche ou la droite pour voir plus de vidéos",
-        previousVideos: "Précédent",
-        moreVideos: "Plus de vidéos",
-        zelleBadge: "Le moyen le plus rapide de donner",
-        donateTag: "Soutenir la campagne",
-        donateTitle:
-          "Aidez à financer la campagne électorale 2026 de Ronald Morand",
-        donateSubtext:
-          "Chaque don aide à élargir la mobilisation, renforcer le soutien communautaire et faire avancer cette campagne en Haïti. Votre contribution soutient un message de leadership, d'unité et d'impact durable.",
-        donateSecurely: "Faire un don en toute sécurité",
-        donateImpactChip: "Chaque contribution fait la différence",
-        goal: "Objectif",
-        raised: "Collecté",
-        supporters: "Soutiens",
-        toBeUpdated: "À mettre à jour",
-        campaignProgress: "Progression de la campagne",
-        impact25: "Soutient le mouvement",
-        impact50: "Nous aide à atteindre plus d'électeurs",
-        impact100: "Finance les actions de campagne",
-        impact250: "Soutient les événements communautaires",
-        donorboxTag: "Don en ligne sécurisé",
-        donorboxTitle: "Faites votre contribution aujourd'hui",
-        donorboxText:
-          "Faites un don en ligne via notre formulaire sécurisé. Votre soutien aide à renforcer la mobilisation, accroître la visibilité et faire avancer la campagne.",
-        zelleTitle: "Don par Zelle",
-        zelleLabel: "Envoyez votre contribution à :",
-        zelleNote:
-          "Utilisez Zelle pour un soutien rapide et direct à la campagne.",
-        bankTitle: "Virement bancaire",
-        accountNumber: "Numéro de compte",
-        routingNumber: "Numéro d'acheminement",
-        bankNote:
-          "Veuillez confirmer les informations bancaires avant d'envoyer votre don.",
-        thankYouTitle: "Merci de soutenir la campagne",
-        thankYouText:
-          "Votre générosité aide à renforcer le mouvement, élargir notre mobilisation et bâtir un avenir meilleur pour Haïti grâce au leadership et à l'action communautaire.",
-
-        contactTag: "Contacter la campagne",
-        contactTitle: "Entrer en contact",
-        contactSubtext:
-          "Vous avez une question, souhaitez soutenir la campagne ou entrer en contact avec l'équipe ? Envoyez-nous un message et nous vous répondrons.",
-        emailLabel: "E-mail",
-        campaignSupport: "Soutien de campagne",
-        campaignSupportText: "Supporters aux États-Unis et en Haïti",
-        fullName: "Nom complet",
-        emailAddress: "Adresse e-mail",
-        phone: "Téléphone",
-        messagePlaceholder: "Écrivez votre message ici...",
-        sendMessage: "Envoyer le message",
-
-        supportTitle: "Soutenir la campagne",
-        supportText:
-          "Chaque contribution aide à créer un élan, accroître la mobilisation et transmettre le message de la campagne à davantage de personnes dans la communauté.",
-        support25: "Aide à faire connaître la campagne",
-        support50: "Soutient la mobilisation et la communication",
-        support100: "Aide à financer les événements et l'organisation",
-        contributeToday: "Contribuer aujourd'hui",
-        supportReason1Title: "Mobilisation de campagne",
-        supportReason1Text: "Aidez à renforcer la communication, la visibilité et l’engagement des électeurs dans la communauté.",
-        supportReason2Title: "Soutien communautaire",
-        supportReason2Text: "Renforcez les efforts locaux, les événements et le lien direct avec les familles.",
-        supportReason3Title: "Avenir de L’Azile",
-        supportReason3Text: "Investissez dans une vision centrée sur le développement, le leadership et le progrès à long terme.",
-
-        countdownDays: "Jours",
-        countdownHours: "Heures",
-        countdownMinutes: "Minutes",
-        countdownSeconds: "Secondes",
-        contactCtaTitle: "Soutenir la campagne",
-        contactCtaText:
-          "Chaque message, chaque partage et chaque don contribuent à renforcer l’élan de la campagne de Ronald Morand à L’Azile.",
-        contactDonateNow: "Faire un don",
-
-
-        heroStatYear: "Année électorale",
-        heroStatCommunity: "Priorité à la communauté",
-        heroStatGrassroots: "Soutien populaire",
-        heroBadge: "Pour Haïti",
-        heroQuote:
-          "Le leadership commence par le service, l'unité et l'engagement envers le peuple.",
-
-        footerText: "© 2025 Campagne Ronald Morand. Tous droits réservés."
-      }
-    },
-    ht: {
-      translation: {
-        campaign: "Kanpay Ronald Morand",
-        about: "Konsènan",
-        community: "Kominote",
-        donate: "Bay don",
-        contact: "Kontak",
-        heroQuote: "Lidèchip kòmanse ak sèvis, inite, ak angajman anvè pèp la.",
-        home: "Akèy",
-        heroTag: "Kanpay Eleksyon 2026",
-        heroTitle: "Byenveni!",
-        heroTitle: "Byenvini lan lansman kanpay Ronald Morand an",
-        electionDayLabel: "Jou eleksyon an:",
-        electionDay: "13 Desanm 2026",
-        donateNow: "Bay don kounye a",
-        learnMore: "Aprann plis",
-        heroText: "Nou pa bliye wòl enpòtan fanm yo jwe nan devlopman dirab kominote natale yo.",
-        heroText2: "Mwen salye nou tout, mwen kontan avèk nou!",
-        heroText3: "Nou pa bliye wòl enpòtan fanm yo jwe nan devlopman dirab kominote natale yo.",
-        heroText4: "Mwen salye nou tout, mwen kontan avèk nou!",
-
-
-        aboutTag: "Nan konsènan an",
-        aboutTitle: "Konsènan Ronald Morand",
-        aboutLead:
-          "Ronald Morand angaje pou sèvi pèp Ayisyen an ak lidèchip, entegrite, ak yon vizyon solid pou lavni.",
-        aboutText1:
-          "Kanpay sa a konsantre sou sipò kominotè, pwogrè, ak kreye opòtinite pou pèp la. Li chita sou kwayans ke vrè lidèchip kòmanse lè w koute, sèvi, epi rasanble moun ansanm.",
-        aboutText2:
-          "Avèk sipò kominote lokal yo ak Ayisyen toupatou sou latè, kanpay sa a vize bay espwa, ranfòse sansibilizasyon, epi kreye yon enpak reyèl avan jou eleksyon an.",
-
-        missionCommunityTitle: "Kominote",
-        missionCommunityText:
-          "Bati relasyon ki pi solid epi bay fanmi yo fòs atravè sèvis ak sansibilizasyon.",
-        missionLeadershipTitle: "Lidèchip",
-        missionLeadershipText:
-          "Ankouraje lidèchip onèt, kominikasyon klè, ak bon reprezantasyon.",
-        missionVisionTitle: "Vizyon",
-        missionVisionText:
-          "Kreye yon avni ki chaje ak espwa pou Ayiti atravè pwogrè, opòtinite, ak inite.",
-communityDonateTitle: "Sipòte kanpay la",
-communityDonateText: "Ede Ronald Morand rankontre plis moun epi pataje vizyon li pou L’Azile.",
-        spotlightTag: "Yon vizyon pou Ayiti",
-        spotlightTitle: "Lidèchip ki chita nan kominote a",
-        spotlightLead:
-          "Kanpay Ronald Morand lan konsantre sou sèvis, inite, ak pwogrè.",
-        spotlightText1:
-          "Mouvman sa a se sou bay kominote yo fòs, kreye opòtinite, epi konstwi yon pi bon avni pou Ayiti.",
-        spotlightText2:
-          "Avèk sipò moun ki lakay ak aletranje, kanpay sa a ka elaji sansibilizasyon li, ranfòse mesaj li, epi rive jwenn plis fanmi atravè peyi a.",
-        spotlightQuote: "Bati espwa atravè sèvis, inite, ak aksyon.",
-        spotlightPoint1: "Kominote an premye",
-        spotlightPoint2: "Sipò mondyal",
-        spotlightPoint3: "Lidèchip ki gade lavni",
-        supportReason1Title: "Sansibilizasyon kanpay la",
-        supportReason1Text: "Ede elaji kominikasyon, vizibilite, ak angajman elektè yo nan kominote a.",
-        supportReason2Title: "Sipò kominotè",
-        supportReason2Text: "Ranfòse efò lokal yo, evènman yo, ak koneksyon dirèk ak fanmi yo.",
-        supportReason3Title: "Avenir L’Azile",
-        supportReason3Text: "Envesti nan yon vizyon ki chita sou devlopman, lidèchip, ak pwogrè alontèm.",
-        campaignVideosTitle: "Videyo kanpay la",
-        campaignVideosText: "Gade videyo evènman legliz yo ak aktivite sansibilizasyon nan kominote a.",
-        churchEventVideo1: "Sipò pou evènman legliz lokal yo",
-        churchEventVideo2: "Konekte ak kominote legliz nou an",
-        communityOutreachVideo: "Sansibilizasyon kominotè an aksyon",
-        facebookVideosTitle: "Plis videyo sou Facebook",
-        facebookVideosText: "Gade plis videyo kanpay la sou Facebook.",
-        campaignVideo5: "Videyo kanpay 5",
-        campaignVideo6: "Videyo kanpay 6",
-        swipeVideos: "Glise agoch oswa adwat pou wè plis videyo",
-        previousVideos: "Anvan",
-        moreVideos: "Plis videyo",
-        communityEventLabel: "Evènman espesyal",
-        communityEventTitle: "Gran ouvèti Burger King",
-        communityEventText: "Ronald Morand parèt kòm yon sipòtè ofisyèl. Gade afich la pou tout detay pwogram nan.",
-        communityEventDate: "9 pou rive 11 oktòb",
-        communityTextExtra:
-          "Depi rankont lokal yo rive nan patenarya kominotè yo, moman sa yo montre moun ak relasyon ki dèyè kanpay la. Gade foto ak videyo ki anba yo pou wè travay la an aksyon.",
-        communityTextExtra2: "Evènman kominotè yo rasanble moun. Gade moman kanpay ki anba yo pou dekouvri relasyon k ap bati nan L’Azile.",
-        communityTag: "Enpak nan kominote a",
-        communityTitle: "Gade kanpay la an aksyon",
-        communityText:
-          "Dekouvri sansibilizasyon kominotè, moman kanpay la, ak sipò piblik pandan Ronald Morand ap rankontre moun epi pataje vizyon li pou Ayiti.",
-        communityFloatingPill: "Vrè moman. Vrè sipò.",
-        communityPhotosTitle: "Foto kominote a",
-        communityPhotosText:
-          "Moman sansibilizasyon, koneksyon, ak sipò sou wout kanpay la.",
-        mediaTitle: "Medya ak gwo moman kanpay la",
-        mediaText:
-          "Gade videyo kanpay yo ak moman enpòtan nan kominote a.",
-        watchCampaignVideo: "Gade videyo kanpay la",
-        donationEmail: "Imèl",
-        zelleBadge: "Fason ki pi rapid pou bay",
-
-        donateTag: "Sipòte kanpay la",
-        donateTitle: "Ede finanse kanpay eleksyon Ronald Morand pou 2026",
-        donateSubtext:
-          "Chak don ede elaji sansibilizasyon, ranfòse sipò kominotè, epi fè kanpay sa a vanse ann Ayiti. Kontribisyon ou ede pote yon mesaj lidèchip, inite, ak enpak dirab.",
-        donateSecurely: "Bay don an sekirite",
-        donateImpactChip: "Chak kontribisyon fè diferans",
-        goal: "Objektif",
-        raised: "Ranmase",
-        supporters: "Sipòtè",
-        toBeUpdated: "Ap mete ajou pita",
-        campaignProgress: "Pwogrè kanpay la",
-        impact25: "Sipòte mouvman an",
-        impact50: "Ede nou rive jwenn plis votè",
-        impact100: "Finanse sansibilizasyon kanpay la",
-        impact250: "Sipòte evènman kominotè yo",
-        donorboxTag: "Don an liy an sekirite",
-        donorboxTitle: "Fè kontribisyon ou jodi a",
-        donorboxText:
-          "Bay don an liy atravè fòm don sekirize nou an. Sipò ou ede ranfòse sansibilizasyon, ogmante vizibilite, epi fè kanpay la avanse.",
-        zelleTitle: "Don pa Zelle",
-        zelleLabel: "Voye kontribisyon ou bay:",
-        zelleNote:
-          "Sèvi ak Zelle pou sipò rapid ak dirèk pou kanpay la.",
-        bankTitle: "Transfè labank",
-        accountNumber: "Nimewo kont",
-        routingNumber: "Nimewo routaj",
-        bankNote:
-          "Tanpri verifye detay kont yo anvan ou voye don ou.",
-        thankYouTitle: "Mèsi paske w ap sipòte kanpay la",
-        thankYouText:
-          "Jenerozite ou ede ranfòse mouvman an, elaji sansibilizasyon nou, epi bati yon pi bon avni pou Ayiti atravè lidèchip ak aksyon kominotè.",
-
-        contactTag: "Kontakte kanpay la",
-        contactTitle: "Pran kontak",
-        contactSubtext:
-          "Ou gen yon kesyon, ou vle sipòte kanpay la, oswa ou vle konekte ak ekip la? Voye nou yon mesaj epi n ap reponn ou.",
-        emailLabel: "Imèl",
-        campaignSupport: "Sipò kanpay",
-        campaignSupportText: "Sipòtè Ozetazini ak ann Ayiti",
-        fullName: "Non konplè",
-        emailAddress: "Adrès imèl",
-        phone: "Telefòn",
-        messagePlaceholder: "Ekri mesaj ou la...",
-        sendMessage: "Voye mesaj",
-
-        supportTitle: "Sipòte kanpay la",
-        supportText:
-          "Chak kontribisyon ede bati plis elan, ogmante sansibilizasyon, epi pote mesaj kanpay la bay plis moun nan kominote a.",
-        support25: "Ede fè moun konnen kanpay la",
-        support50: "Sipòte sansibilizasyon ak kominikasyon",
-        support100: "Ede finanse evènman ak òganizasyon",
-        contributeToday: "Kontribye jodi a",
-
-        countdownDays: "Jou",
-        countdownHours: "Èdtan",
-        countdownMinutes: "Minit",
-        countdownSeconds: "Segonn",
-        contactCtaTitle: "Sipòte kanpay la",
-        contactCtaText:
-          "Chak mesaj, chak pataj, ak chak don ede bay plis fòs ak elan nan kanpay Ronald Morand nan L’Azile.",
-        contactDonateNow: "Bay don kounye a",
-
-
-        heroStatYear: "Ane eleksyon",
-        heroStatCommunity: "Kominote an premye",
-        heroStatGrassroots: "Sipò baz",
-        heroBadge: "Pou Ayiti",
-        heroQuote:
-          "Lidèchip kòmanse ak sèvis, inite, ak angajman anvè pèp la.",
-
-        footerText: "© 2025 Kanpay Ronald Morand. Tout dwa rezève."
-      }
-    }
   },
+
+  fr: {
+    translation: {
+      campaign: "Campagne Ronald Morand",
+      home: "Accueil",
+      about: "À propos",
+      community: "Communauté",
+      donate: "Faire un don",
+      contact: "Contact",
+      openMenu: "Ouvrir le menu",
+      closeMenu: "Fermer le menu",
+
+      heroTag: "Campagne électorale 2026",
+      heroTitle: "Bienvenue dans la campagne de Ronald Morand",
+      heroText:
+        "Nous n’oublions pas le rôle important que jouent les femmes dans le développement durable de leurs communautés locales.",
+      heroText2: "Je vous salue tous et toutes, je suis heureux d’être avec vous !",
+      heroText3:
+        "Nous n’oublions pas le rôle important que jouent les femmes dans le développement durable de leurs communautés locales.",
+      heroText4:
+        "Je vous salue tous et toutes, je suis heureux d’être avec vous !",
+      heroQuote:
+        "Le leadership commence par le service, l’unité et l’engagement envers le peuple.",
+      heroBadge: "Pour Haïti",
+      heroStatYear: "Année électorale",
+      heroStatCommunity: "Priorité à la communauté",
+      heroStatGrassroots: "Soutien populaire",
+      electionDayLabel: "Jour de l’élection :",
+      electionDay: "13 décembre 2026",
+      countdownDays: "Jours",
+      countdownHours: "Heures",
+      countdownMinutes: "Minutes",
+      countdownSeconds: "Secondes",
+      donateNow: "Faire un don",
+      learnMore: "En savoir plus",
+
+      aboutTag: "À propos de la campagne",
+      aboutTitle: "À propos de Ronald Morand",
+      aboutLead:
+        "Ronald Morand s’engage à servir le peuple haïtien avec leadership, intégrité et une vision forte pour l’avenir.",
+      aboutText1:
+        "Cette campagne est axée sur le soutien communautaire, le progrès et la création d’opportunités pour la population. Elle repose sur la conviction qu’un vrai leadership commence par l’écoute, le service et le rassemblement des gens.",
+      aboutText2:
+        "Avec le soutien des communautés locales et des Haïtiens du monde entier, cette campagne vise à inspirer l’espoir, renforcer la mobilisation et créer un impact concret avant le jour de l’élection.",
+      campaignBiography: "Biographie de campagne",
+      missionCommunityTitle: "Communauté",
+      missionCommunityText:
+        "Renforcer les relations et soutenir les familles par le service et la proximité.",
+      missionLeadershipTitle: "Leadership",
+      missionLeadershipText:
+        "Promouvoir un leadership honnête, une communication claire et une représentation significative.",
+      missionVisionTitle: "Vision",
+      missionVisionText:
+        "Créer un avenir porteur d’espoir pour Haïti grâce au progrès, aux opportunités et à l’unité.",
+
+      spotlightTag: "Une vision pour Haïti",
+      spotlightTitle: "Un leadership enraciné dans la communauté",
+      spotlightLead:
+        "La campagne de Ronald Morand est axée sur le service, l’unité et le progrès.",
+      spotlightText1:
+        "Ce mouvement vise à renforcer les communautés, créer des opportunités et bâtir un avenir meilleur pour Haïti.",
+      spotlightText2:
+        "Avec le soutien des personnes au pays et à l’étranger, cette campagne peut élargir sa portée, renforcer son message et toucher davantage de familles à travers le pays.",
+      spotlightQuote: "Construire l’espoir par le service, l’unité et l’action.",
+      spotlightPoint1: "La communauté d’abord",
+      spotlightPoint2: "Soutien mondial",
+      spotlightPoint3: "Leadership tourné vers l’avenir",
+
+      communityTag: "Impact communautaire",
+      communityTitle: "Voyez la campagne en action",
+      communityText:
+        "Découvrez les actions communautaires, les moments de campagne et le soutien du public alors que Ronald Morand rencontre la population et partage sa vision pour Haïti.",
+      communityTextExtra:
+        "Des rencontres locales aux partenariats communautaires, ces moments mettent en lumière les personnes et les liens au cœur de la campagne. Découvrez les photos et vidéos ci-dessous.",
+      communityTextExtra2:
+        "Les événements communautaires rassemblent les gens. Découvrez ci-dessous les moments de campagne et les liens qui se créent à L’Azile.",
+      communityFloatingPill: "Des moments vrais. Un vrai soutien.",
+      communityEventLabel: "Événement à la une",
+      communityEventTitle: "Grande ouverture de Burger King",
+      communityEventText:
+        "Ronald Morand figure parmi les sponsors officiels. Consultez l’affiche pour le programme complet.",
+      communityEventDate: "Du 9 au 11 octobre",
+      communityPhotosTitle: "Photos de la communauté",
+      communityPhotosText:
+        "Moments de proximité, de lien et de soutien sur le terrain.",
+      mediaTitle: "Médias et temps forts de la campagne",
+      mediaText:
+        "Regardez des vidéos phares de la campagne et des moments vécus dans la communauté.",
+      campaignVideosTitle: "Vidéos de la campagne",
+      campaignVideosText:
+        "Regardez des vidéos d’événements religieux et d’actions communautaires.",
+      churchEventVideo1: "Soutien aux événements de l’église locale",
+      churchEventVideo2: "Créer des liens avec notre communauté religieuse",
+      communityOutreachVideo: "L’action communautaire en action",
+      campaignVideo5: "Vidéo de campagne 5",
+      campaignVideo6: "Vidéo de campagne 6",
+      swipeVideos:
+        "Balayez vers la gauche ou la droite pour voir plus de vidéos",
+      previousVideos: "Précédent",
+      moreVideos: "Plus de vidéos",
+      facebookVideosTitle: "Plus de vidéos sur Facebook",
+      facebookVideosText:
+        "Découvrez d’autres vidéos de la campagne sur Facebook.",
+      watchCampaignVideo: "Voir la vidéo de campagne",
+      watchOnFacebook: "Voir sur Facebook",
+      communityDonateTitle: "Soutenez la campagne",
+      communityDonateText:
+        "Aidez Ronald Morand à rencontrer davantage de personnes et à partager sa vision pour L’Azile.",
+
+      donateTag: "Soutenir la campagne",
+      donateTitle:
+        "Aidez à financer la campagne électorale 2026 de Ronald Morand",
+      donateSubtext:
+        "Chaque don aide à élargir la mobilisation, renforcer le soutien communautaire et faire avancer cette campagne en Haïti. Votre contribution soutient un message de leadership, d’unité et d’impact durable.",
+      donateSecurely: "Faire un don en toute sécurité",
+      donateImpactChip: "Chaque contribution fait la différence",
+      goal: "Objectif",
+      raised: "Collecté",
+      supporters: "Soutiens",
+      toBeUpdated: "À mettre à jour",
+      campaignProgress: "Progression de la campagne",
+      impact25: "Soutient le mouvement",
+      impact50: "Nous aide à atteindre plus d’électeurs",
+      impact100: "Finance les actions de campagne",
+      impact250: "Soutient les événements communautaires",
+      donorboxTag: "Don en ligne sécurisé",
+      donorboxTitle: "Faites votre contribution aujourd’hui",
+      donorboxText:
+        "Faites un don en ligne via notre formulaire sécurisé. Votre soutien aide à renforcer la mobilisation, accroître la visibilité et faire avancer la campagne.",
+      zelleTitle: "Don par Zelle",
+      zelleLabel: "Envoyez votre contribution à :",
+      zelleBadge: "Le moyen le plus rapide de donner",
+      zelleNote: "Utilisez Zelle pour un soutien rapide et direct à la campagne.",
+      bankTitle: "Virement bancaire",
+      accountNumber: "Numéro de compte",
+      routingNumber: "Numéro d’acheminement",
+      donationEmail: "E-mail",
+      bankNote:
+        "Veuillez confirmer les informations bancaires avant d’envoyer votre don.",
+      thankYouTitle: "Merci de soutenir la campagne",
+      thankYouText:
+        "Votre générosité aide à renforcer le mouvement, élargir notre mobilisation et bâtir un avenir meilleur pour Haïti grâce au leadership et à l’action communautaire.",
+      supportReason1Title: "Mobilisation de campagne",
+      supportReason1Text:
+        "Aidez à renforcer la communication, la visibilité et l’engagement des électeurs dans la communauté.",
+      supportReason2Title: "Soutien communautaire",
+      supportReason2Text:
+        "Renforcez les efforts locaux, les événements et le lien direct avec les familles.",
+      supportReason3Title: "Avenir de L’Azile",
+      supportReason3Text:
+        "Investissez dans une vision centrée sur le développement, le leadership et le progrès à long terme.",
+
+      contactTag: "Contacter la campagne",
+      contactTitle: "Entrer en contact",
+      contactSubtext:
+        "Vous avez une question, souhaitez soutenir la campagne ou entrer en contact avec l’équipe ? Envoyez-nous un message et nous vous répondrons.",
+      emailLabel: "E-mail",
+      campaignSupport: "Soutien de campagne",
+      campaignSupportText: "Supporters aux États-Unis et en Haïti",
+      fullName: "Nom complet",
+      emailAddress: "Adresse e-mail",
+      phone: "Téléphone",
+      messagePlaceholder: "Écrivez votre message ici...",
+      sendMessage: "Envoyer le message",
+      sending: "Envoi en cours...",
+      messageSent: "Merci. Votre message a bien été envoyé.",
+      contactCtaTitle: "Soutenir la campagne",
+      contactCtaText:
+        "Chaque message, chaque partage et chaque don contribuent à renforcer l’élan de la campagne de Ronald Morand à L’Azile.",
+      contactDonateNow: "Faire un don",
+
+      supportTitle: "Soutenir la campagne",
+      supportText:
+        "Chaque contribution aide à créer un élan, accroître la mobilisation et transmettre le message de la campagne à davantage de personnes dans la communauté.",
+      support25: "Aide à faire connaître la campagne",
+      support50: "Soutient la mobilisation et la communication",
+      support100: "Aide à financer les événements et l’organisation",
+      contributeToday: "Contribuer aujourd’hui",
+
+      footerText: "Campagne Ronald Morand. Tous droits réservés.",
+    },
+  },
+
+  ht: {
+    translation: {
+      campaign: "Kanpay Ronald Morand",
+      home: "Akèy",
+      about: "Konsènan",
+      community: "Kominote",
+      donate: "Bay don",
+      contact: "Kontak",
+      openMenu: "Louvri meni an",
+      closeMenu: "Fèmen meni an",
+
+      heroTag: "Kanpay Eleksyon 2026",
+      heroTitle: "Byenvini nan kanpay Ronald Morand lan",
+      heroText:
+        "Nou pa bliye wòl enpòtan fanm yo jwe nan devlopman dirab kominote natale yo.",
+      heroText2: "Mwen salye nou tout, mwen kontan avèk nou!",
+      heroText3:
+        "Nou pa bliye wòl enpòtan fanm yo jwe nan devlopman dirab kominote natale yo.",
+      heroText4: "Mwen salye nou tout, mwen kontan avèk nou!",
+      heroQuote:
+        "Lidèchip kòmanse ak sèvis, inite, ak angajman anvè pèp la.",
+      heroBadge: "Pou Ayiti",
+      heroStatYear: "Ane eleksyon",
+      heroStatCommunity: "Kominote an premye",
+      heroStatGrassroots: "Sipò baz",
+      electionDayLabel: "Jou eleksyon an:",
+      electionDay: "13 desanm 2026",
+      countdownDays: "Jou",
+      countdownHours: "Èdtan",
+      countdownMinutes: "Minit",
+      countdownSeconds: "Segonn",
+      donateNow: "Bay don kounye a",
+      learnMore: "Aprann plis",
+
+      aboutTag: "Konsènan kanpay la",
+      aboutTitle: "Konsènan Ronald Morand",
+      aboutLead:
+        "Ronald Morand angaje pou sèvi pèp Ayisyen an ak lidèchip, entegrite, ak yon vizyon solid pou lavni.",
+      aboutText1:
+        "Kanpay sa a konsantre sou sipò kominotè, pwogrè, ak kreye opòtinite pou pèp la. Li chita sou kwayans ke vrè lidèchip kòmanse lè w koute, sèvi, epi rasanble moun ansanm.",
+      aboutText2:
+        "Avèk sipò kominote lokal yo ak Ayisyen toupatou sou latè, kanpay sa a vize bay espwa, ranfòse sansibilizasyon, epi kreye yon enpak reyèl avan jou eleksyon an.",
+      campaignBiography: "Biyografi kanpay la",
+      missionCommunityTitle: "Kominote",
+      missionCommunityText:
+        "Bati relasyon ki pi solid epi bay fanmi yo fòs atravè sèvis ak sansibilizasyon.",
+      missionLeadershipTitle: "Lidèchip",
+      missionLeadershipText:
+        "Ankouraje lidèchip onèt, kominikasyon klè, ak bon reprezantasyon.",
+      missionVisionTitle: "Vizyon",
+      missionVisionText:
+        "Kreye yon avni ki chaje ak espwa pou Ayiti atravè pwogrè, opòtinite, ak inite.",
+
+      spotlightTag: "Yon vizyon pou Ayiti",
+      spotlightTitle: "Lidèchip ki chita nan kominote a",
+      spotlightLead:
+        "Kanpay Ronald Morand lan konsantre sou sèvis, inite, ak pwogrè.",
+      spotlightText1:
+        "Mouvman sa a se sou bay kominote yo fòs, kreye opòtinite, epi konstwi yon pi bon avni pou Ayiti.",
+      spotlightText2:
+        "Avèk sipò moun ki lakay ak aletranje, kanpay sa a ka elaji sansibilizasyon li, ranfòse mesaj li, epi rive jwenn plis fanmi atravè peyi a.",
+      spotlightQuote: "Bati espwa atravè sèvis, inite, ak aksyon.",
+      spotlightPoint1: "Kominote an premye",
+      spotlightPoint2: "Sipò mondyal",
+      spotlightPoint3: "Lidèchip ki gade lavni",
+
+      communityTag: "Enpak nan kominote a",
+      communityTitle: "Gade kanpay la an aksyon",
+      communityText:
+        "Dekouvri sansibilizasyon kominotè, moman kanpay la, ak sipò piblik pandan Ronald Morand ap rankontre moun epi pataje vizyon li pou Ayiti.",
+      communityTextExtra:
+        "Depi rankont lokal yo rive nan patenarya kominotè yo, moman sa yo montre moun ak relasyon ki dèyè kanpay la. Gade foto ak videyo ki anba yo pou wè travay la an aksyon.",
+      communityTextExtra2:
+        "Evènman kominotè yo rasanble moun. Gade moman kanpay ki anba yo pou dekouvri relasyon k ap bati nan L’Azile.",
+      communityFloatingPill: "Vrè moman. Vrè sipò.",
+      communityEventLabel: "Evènman espesyal",
+      communityEventTitle: "Gran ouvèti Burger King",
+      communityEventText:
+        "Ronald Morand parèt kòm yon sipòtè ofisyèl. Gade afich la pou tout detay pwogram nan.",
+      communityEventDate: "9 pou rive 11 oktòb",
+      communityPhotosTitle: "Foto kominote a",
+      communityPhotosText:
+        "Moman sansibilizasyon, koneksyon, ak sipò sou wout kanpay la.",
+      mediaTitle: "Medya ak gwo moman kanpay la",
+      mediaText:
+        "Gade videyo kanpay yo ak moman enpòtan nan kominote a.",
+      campaignVideosTitle: "Videyo kanpay la",
+      campaignVideosText:
+        "Gade videyo evènman legliz yo ak aktivite sansibilizasyon nan kominote a.",
+      churchEventVideo1: "Sipò pou evènman legliz lokal yo",
+      churchEventVideo2: "Konekte ak kominote legliz nou an",
+      communityOutreachVideo: "Sansibilizasyon kominotè an aksyon",
+      campaignVideo5: "Videyo kanpay 5",
+      campaignVideo6: "Videyo kanpay 6",
+      swipeVideos: "Glise agoch oswa adwat pou wè plis videyo",
+      previousVideos: "Anvan",
+      moreVideos: "Plis videyo",
+      facebookVideosTitle: "Plis videyo sou Facebook",
+      facebookVideosText: "Gade plis videyo kanpay la sou Facebook.",
+      watchCampaignVideo: "Gade videyo kanpay la",
+      watchOnFacebook: "Gade sou Facebook",
+      communityDonateTitle: "Sipòte kanpay la",
+      communityDonateText:
+        "Ede Ronald Morand rankontre plis moun epi pataje vizyon li pou L’Azile.",
+
+      donateTag: "Sipòte kanpay la",
+      donateTitle: "Ede finanse kanpay eleksyon Ronald Morand pou 2026",
+      donateSubtext:
+        "Chak don ede elaji sansibilizasyon, ranfòse sipò kominotè, epi fè kanpay sa a vanse ann Ayiti. Kontribisyon ou ede pote yon mesaj lidèchip, inite, ak enpak dirab.",
+      donateSecurely: "Bay don an sekirite",
+      donateImpactChip: "Chak kontribisyon fè diferans",
+      goal: "Objektif",
+      raised: "Ranmase",
+      supporters: "Sipòtè",
+      toBeUpdated: "Ap mete ajou pita",
+      campaignProgress: "Pwogrè kanpay la",
+      impact25: "Sipòte mouvman an",
+      impact50: "Ede nou rive jwenn plis votè",
+      impact100: "Finanse sansibilizasyon kanpay la",
+      impact250: "Sipòte evènman kominotè yo",
+      donorboxTag: "Don an liy an sekirite",
+      donorboxTitle: "Fè kontribisyon ou jodi a",
+      donorboxText:
+        "Bay don an liy atravè fòm don sekirize nou an. Sipò ou ede ranfòse sansibilizasyon, ogmante vizibilite, epi fè kanpay la avanse.",
+      zelleTitle: "Don pa Zelle",
+      zelleLabel: "Voye kontribisyon ou bay:",
+      zelleBadge: "Fason ki pi rapid pou bay",
+      zelleNote:
+        "Sèvi ak Zelle pou sipò rapid ak dirèk pou kanpay la.",
+      bankTitle: "Transfè labank",
+      accountNumber: "Nimewo kont",
+      routingNumber: "Nimewo routaj",
+      donationEmail: "Imèl",
+      bankNote:
+        "Tanpri verifye detay kont yo anvan ou voye don ou.",
+      thankYouTitle: "Mèsi paske w ap sipòte kanpay la",
+      thankYouText:
+        "Jenerozite ou ede ranfòse mouvman an, elaji sansibilizasyon nou, epi bati yon pi bon avni pou Ayiti atravè lidèchip ak aksyon kominotè.",
+      supportReason1Title: "Sansibilizasyon kanpay la",
+      supportReason1Text:
+        "Ede elaji kominikasyon, vizibilite, ak angajman elektè yo nan kominote a.",
+      supportReason2Title: "Sipò kominotè",
+      supportReason2Text:
+        "Ranfòse efò lokal yo, evènman yo, ak koneksyon dirèk ak fanmi yo.",
+      supportReason3Title: "Avni L’Azile",
+      supportReason3Text:
+        "Envesti nan yon vizyon ki chita sou devlopman, lidèchip, ak pwogrè alontèm.",
+
+      contactTag: "Kontakte kanpay la",
+      contactTitle: "Pran kontak",
+      contactSubtext:
+        "Ou gen yon kesyon, ou vle sipòte kanpay la, oswa ou vle konekte ak ekip la? Voye nou yon mesaj epi n ap reponn ou.",
+      emailLabel: "Imèl",
+      campaignSupport: "Sipò kanpay",
+      campaignSupportText: "Sipòtè Ozetazini ak ann Ayiti",
+      fullName: "Non konplè",
+      emailAddress: "Adrès imèl",
+      phone: "Telefòn",
+      messagePlaceholder: "Ekri mesaj ou la...",
+      sendMessage: "Voye mesaj",
+      sending: "Ap voye...",
+      messageSent: "Mèsi. Mesaj ou a ale avèk siksè.",
+      contactCtaTitle: "Sipòte kanpay la",
+      contactCtaText:
+        "Chak mesaj, chak pataj, ak chak don ede bay plis fòs ak elan nan kanpay Ronald Morand nan L’Azile.",
+      contactDonateNow: "Bay don kounye a",
+
+      supportTitle: "Sipòte kanpay la",
+      supportText:
+        "Chak kontribisyon ede bati plis elan, ogmante sansibilizasyon, epi pote mesaj kanpay la bay plis moun nan kominote a.",
+      support25: "Ede fè moun konnen kanpay la",
+      support50: "Sipòte sansibilizasyon ak kominikasyon",
+      support100: "Ede finanse evènman ak òganizasyon",
+      contributeToday: "Kontribye jodi a",
+
+      footerText: "Kanpay Ronald Morand. Tout dwa rezève.",
+    },
+  },
+};
+
+i18n.use(initReactI18next).init({
+  resources,
   lng: "en",
   fallbackLng: "en",
-  interpolation: {
-    escapeValue: false
-  }
+  interpolation: { escapeValue: false },
 });
 
 export default i18n;
-
-
-

@@ -1,13 +1,5 @@
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  padding: 14px 40px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid #fff;
   background: linear-gradient(
     to bottom,
     #00209f 0%,
@@ -16,152 +8,33 @@
     #d21034 100%
   );
   box-shadow: 0 10px 24px rgba(0, 32, 159, 0.18);
-  color: #ffffff;
 }
 
-.logo a {
-  color: #ffffff;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  text-decoration: none;
-  transition: color 0.25s ease;
+.navbar :is(a, button):focus-visible {
+  outline: 3px solid #ffe66d;
+  outline-offset: 3px;
 }
 
-.logo a:hover,
-.nav-links a:hover {
-  color: #ffe66d;
-}
-
-.nav-links {
+.nav-language .language-buttons {
   display: flex;
-  padding: 0;
-  margin: 0;
-  align-items: center;
-  gap: 24px;
-  list-style: none;
-}
-
-.nav-links a {
-  position: relative;
-  color: #eaf2ff;
-  font-family: "Inter", sans-serif;
-  font-size: 0.94rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.25s ease;
-}
-
-.nav-links a:hover {
-  color: #7cc4ff;
-}
-
-.nav-links a::after {
-  position: absolute;
-  bottom: -7px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  border-radius: 999px;
-  background: #ffe66d;
-  content: "";
-  transition: width 0.25s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.nav-language {
-  display: flex;
-  align-items: center;
-}
-
-.language-buttons {
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 5px;
 }
 
-.language-buttons button {
+.nav-language .language-buttons button {
+  min-height: 36px;
   padding: 6px 9px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 7px;
-  background: transparent;
-  color: #ffffff;
-  cursor: pointer;
+  background: rgba(0, 32, 159, 0.45);
+  color: #fff;
   font-size: 0.76rem;
-  font-weight: 700;
-  transition: background 0.2s ease, color 0.2s ease;
+  font-weight: 800;
+  cursor: pointer;
 }
 
-.language-buttons button:hover,
-.language-buttons button.active {
-  border-color: #ffffff;
-  background: #ffffff;
-  color: #202634;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-  .navbar {
-    padding: 14px 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .logo {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 18px;
-  }
-
-  .nav-language {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/* iPhone and small phones */
-@media (max-width: 500px) {
-  .navbar {
-    padding: 12px 10px;
-    gap: 10px;
-  }
-
-  .logo a {
-    font-size: 1.1rem;
-  }
-
-  .nav-links {
-    width: 100%;
-    justify-content: space-evenly;
-    gap: 6px;
-  }
-
-  .nav-links a {
-    font-size: 0.73rem;
-    white-space: nowrap;
-  }
-
-  .nav-links a::after {
-    display: none;
-  }
-
-  .language-buttons {
-    gap: 4px;
-  }
-
-  .language-buttons button {
-    min-width: 0;
-    padding: 5px 7px;
-    border-radius: 6px;
-    font-size: 0.68rem;
-  }
+.nav-language .language-buttons button:hover,
+.nav-language .language-buttons button.active {
+  background: #fff;
+  color: #00209f;
 }

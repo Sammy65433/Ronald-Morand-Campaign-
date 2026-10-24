@@ -1,0 +1,69 @@
+.community-marquee {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  border-top: 2px solid #00209f;
+  border-bottom: 2px solid #d21034;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0, 32, 159, 0.08);
+}
+
+.community-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  padding-block: 1rem;
+  animation: community-marquee-scroll 38s linear infinite;
+}
+
+.community-marquee-group {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.community-marquee-item {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.7rem;
+  color: #00209f;
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.community-marquee-item svg {
+  color: #ad7600;
+  font-size: 1.15em;
+}
+
+.community-marquee:hover .community-marquee-track,
+.community-marquee:focus-within .community-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes community-marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community-marquee-track {
+    animation: none;
+  }
+
+  .community-marquee-group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .community-marquee {
+    overflow-x: auto;
+  }
+}

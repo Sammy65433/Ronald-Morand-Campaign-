@@ -1,7 +1,5 @@
 .footer {
-  padding: 24px 20px;
-  text-align: center;
-  color: #ffffff;
+  border-top: 2px solid #fff;
   background: linear-gradient(
     to bottom,
     #00209f 0%,
@@ -9,11 +7,10 @@
     #d21034 50%,
     #d21034 100%
   );
-  border-top: 2px solid #ffffff;
 }
 
 .footer a {
-  color: #ffffff;
+  color: #fff;
 }
 
 .footer a:hover {
