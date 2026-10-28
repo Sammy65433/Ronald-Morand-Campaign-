@@ -10,7 +10,6 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-
 import candidateImg1 from "../assets/Morand1.jpg";
 import Countdown from "./Countdown";
 import "../styles/Hero.css";
@@ -21,21 +20,34 @@ const reveal = {
   transition: { duration: 0.7 },
 };
 
-function Hero() {
+const cardClass =
+  "block rounded-2xl border border-[#00209f]/15 border-t-[3px] " +
+  "bg-white/90 p-4 shadow-sm transition hover:-translate-y-1 " +
+  "hover:bg-[#edf4ff] hover:shadow-md " +
+  "focus-visible:outline-3 focus-visible:outline-offset-4 " +
+  "focus-visible:outline-[#00209f]";
+
+export default function Hero() {
   const { t } = useTranslation();
 
   return (
     <section className="hero relative isolate overflow-hidden text-[#14213d]">
-      <div className="hero-grid pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div
+        className="hero-grid pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      />
       <div className="hero-glow hero-glow-blue" aria-hidden="true" />
       <div className="hero-glow hero-glow-red" aria-hidden="true" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-4 py-16 sm:px-6 lg:min-h-[850px] lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8 lg:py-24">
         <motion.div className="min-w-0" {...reveal}>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#00209f]/20 bg-white/80 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[#00209f] shadow-sm sm:text-sm">
+          <Link
+            to="/about"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#00209f]/20 bg-white/80 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[#00209f] shadow-sm transition hover:bg-[#edf4ff] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#00209f] sm:text-sm"
+          >
             <FaUsers aria-hidden="true" />
             {t("heroTag")}
-          </div>
+          </Link>
 
           <h1 className="mb-7 max-w-[13ch] font-['Outfit'] text-[clamp(3rem,6vw,5.8rem)] font-extrabold leading-[1.03] tracking-[-0.045em] text-[#00209f] [overflow-wrap:anywhere]">
             {t("heroTitle")}
@@ -84,27 +96,36 @@ function Hero() {
           </div>
 
           <div className="mt-6 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-3">
-            <div className="rounded-2xl border border-[#00209f]/15 border-t-[3px] border-t-[#00209f] bg-white/90 p-4 shadow-sm">
-              <FaCalendarAlt className="mb-3 text-xl text-[#b50e2b]" aria-hidden="true" />
+            <Link to="/donate" className={`${cardClass} border-t-[#00209f]`}>
+              <FaCalendarAlt
+                className="mb-3 text-xl text-[#b50e2b]"
+                aria-hidden="true"
+              />
               <strong className="block text-xl font-extrabold text-[#00209f]">
                 2026
               </strong>
               <span className="mt-1 block text-sm leading-snug text-slate-600">
                 {t("heroStatYear")}
               </span>
-            </div>
+            </Link>
 
-            <div className="rounded-2xl border border-[#00209f]/15 border-t-[3px] border-t-[#00209f] bg-white/90 p-4 shadow-sm">
-              <FaUsers className="mb-3 text-xl text-[#b50e2b]" aria-hidden="true" />
+            <Link to="/community" className={`${cardClass} border-t-[#00209f]`}>
+              <FaUsers
+                className="mb-3 text-xl text-[#b50e2b]"
+                aria-hidden="true"
+              />
               <strong className="block text-xl font-extrabold text-[#00209f]">
                 Haiti
               </strong>
               <span className="mt-1 block text-sm leading-snug text-slate-600">
                 {t("heroStatCommunity")}
               </span>
-            </div>
+            </Link>
 
-            <div className="col-span-2 rounded-2xl border border-[#00209f]/15 border-t-[3px] border-t-[#d21034] bg-white/90 p-4 shadow-sm sm:col-span-1">
+            <Link
+              to="/community"
+              className={`${cardClass} col-span-2 border-t-[#d21034] sm:col-span-1`}
+            >
               <FaHandHoldingHeart
                 className="mb-3 text-xl text-[#b50e2b]"
                 aria-hidden="true"
@@ -112,7 +133,7 @@ function Hero() {
               <strong className="block text-base font-extrabold leading-snug text-[#00209f]">
                 {t("heroStatGrassroots")}
               </strong>
-            </div>
+            </Link>
           </div>
         </motion.div>
 
@@ -147,5 +168,3 @@ function Hero() {
     </section>
   );
 }
-
-export default Hero;

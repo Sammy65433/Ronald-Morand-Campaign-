@@ -1,53 +1,59 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import "../styles/Countdown.css";
 
-/* Verify this date with the campaign before publishing. */
-const ELECTION_DATE = "2026-12-13T00:00:00";
+// Midnight at the start of December 13, 2026, in Haiti.
+// This is not a confirmed election start time.
+const TARGET_TIME = Date.parse("2026-12-13T00:00:00-05:00");
 
-function getTimeLeft() {
-  const distance = new Date(ELECTION_DATE).getTime() - Date.now();
-
-  if (distance <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-  }
+function getTimeRemaining() {
+  const total = Math.max(0, TARGET_TIME - Date.now());
 
   return {
-    days: Math.floor(distance / 86_400_000),
-    hours: Math.floor((distance / 3_600_000) % 24),
-    minutes: Math.floor((distance / 60_000) % 60),
-    seconds: Math.floor((distance / 1_000) % 60),
+    days: Math.floor(total / 86_400_000),
+    hours: Math.floor((total / 3_600_000) % 24),
+    minutes: Math.floor((total / 60_000) % 60),
+    seconds: Math.floor((total / 1_000) % 60),
   };
 }
 
-function Countdown() {
+export default function Countdown() {
   const { t } = useTranslation();
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft);
+  const [time, setTime] = useState(getTimeRemaining);
 
   useEffect(() => {
-    const interval = window.setInterval(() => {
-      setTimeLeft(getTimeLeft());
-    }, 1000);
+    const update = () => setTime(getTimeRemaining());
+    const timer = window.setInterval(update, 1000);
 
-    return () => window.clearInterval(interval);
+    document.addEventListener("visibilitychange", update);
+
+    return () => {
+      window.clearInterval(timer);
+      document.removeEventListener("visibilitychange", update);
+    };
   }, []);
 
   const units = [
-    { value: timeLeft.days, label: t("countdownDays") },
-    { value: timeLeft.hours, label: t("countdownHours") },
-    { value: timeLeft.minutes, label: t("countdownMinutes") },
-    { value: timeLeft.seconds, label: t("countdownSeconds") },
+    { key: "days", label: t("countdownDays"), value: time.days },
+    { key: "hours", label: t("countdownHours"), value: time.hours },
+    { key: "minutes", label: t("countdownMinutes"), value: time.minutes },
+    { key: "seconds", label: t("countdownSeconds"), value: time.seconds },
   ];
 
   return (
-    <div className="countdown" role="timer" aria-live="off">
-      {units.map(({ value, label }) => (
-        <div className="countdown-box" key={label}>
-          <span>{String(value).padStart(2, "0")}</span>
-          <p>{label}</p>
-        </div>
-      ))}
+    <div className="countdown">
+      <p className="countdown-heading">{t("electionDayLabel")}</p>
+
+      <div className="countdown-grid" role="timer" aria-live="off">
+        {units.map(({ key, label, value }) => (
+          <div className="countdown-box" key={key}>
+            <span className="countdown-number">
+              {String(value).padStart(2, "0")}
+            </span>
+            <span className="countdown-label">{label}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
-
-export default Countdown;

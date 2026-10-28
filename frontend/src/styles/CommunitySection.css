@@ -315,3 +315,8 @@
   color: #00209f;
   font-weight: 800;
 }
+.community-page .community-marquee {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+}

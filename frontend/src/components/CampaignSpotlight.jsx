@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   FaGlobeAmericas,
@@ -6,7 +7,6 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-
 import candidateImg1 from "../assets/Morand2.jpg";
 import candidateImg2 from "../assets/Morand1.jpg";
 import "../styles/CampaignSpotlight.css";
@@ -18,18 +18,33 @@ const reveal = {
   transition: { duration: 0.65 },
 };
 
-function CampaignSpotlight() {
+export default function CampaignSpotlight() {
   const { t } = useTranslation();
 
   const points = [
-    { icon: FaUsers, text: t("spotlightPoint1") },
-    { icon: FaGlobeAmericas, text: t("spotlightPoint2") },
-    { icon: FaSeedling, text: t("spotlightPoint3") },
+    {
+      icon: FaUsers,
+      text: t("spotlightPoint1"),
+      to: "/community",
+    },
+    {
+      icon: FaGlobeAmericas,
+      text: t("spotlightPoint2"),
+      to: "/donate",
+    },
+    {
+      icon: FaSeedling,
+      text: t("spotlightPoint3"),
+      to: "/donate",
+    },
   ];
 
   return (
     <section className="spotlight-section relative isolate overflow-hidden text-[#14213d]">
-      <div className="spotlight-grid pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div
+        className="spotlight-grid pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
         <motion.div className="relative min-w-0 pb-14" {...reveal}>
@@ -38,7 +53,7 @@ function CampaignSpotlight() {
               src={candidateImg1}
               alt="Ronald Morand portrait"
               loading="lazy"
-              className="block h-[410px] w-full rounded-2xl object-contain bg-[#e8f3ff] sm:h-[540px]"
+              className="block h-[410px] w-full rounded-2xl bg-[#e8f3ff] object-contain sm:h-[540px]"
             />
           </div>
 
@@ -52,7 +67,10 @@ function CampaignSpotlight() {
           </div>
 
           <div className="absolute bottom-0 left-4 max-w-[60%] rounded-xl border border-[#00209f]/15 border-l-4 border-l-[#d21034] bg-white/95 p-4 shadow-xl backdrop-blur">
-            <FaQuoteLeft className="mb-2 text-[#b50e2b]" aria-hidden="true" />
+            <FaQuoteLeft
+              className="mb-2 text-[#b50e2b]"
+              aria-hidden="true"
+            />
             <p className="text-sm font-semibold leading-relaxed text-[#14213d] sm:text-base">
               {t("spotlightQuote")}
             </p>
@@ -82,10 +100,11 @@ function CampaignSpotlight() {
           </div>
 
           <div className="mt-7 grid gap-3">
-            {points.map(({ icon: Icon, text }, index) => (
-              <div
-                key={text}
-                className="flex items-center gap-4 rounded-xl border border-[#00209f]/15 bg-white/90 p-4 shadow-sm"
+            {points.map(({ icon: Icon, text, to }, index) => (
+              <Link
+                key={index}
+                to={to}
+                className="flex items-center gap-4 rounded-xl border border-[#00209f]/15 bg-white/90 p-4 shadow-sm transition hover:-translate-y-1 hover:bg-[#edf4ff] hover:shadow-md focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#00209f]"
               >
                 <span
                   className={`grid h-11 w-11 shrink-0 place-items-center rounded-lg text-lg ${
@@ -99,7 +118,7 @@ function CampaignSpotlight() {
                 <span className="font-bold leading-snug text-[#14213d]">
                   {text}
                 </span>
-              </div>
+              </Link>
             ))}
           </div>
         </motion.div>
@@ -107,5 +126,3 @@ function CampaignSpotlight() {
     </section>
   );
 }
-
-export default CampaignSpotlight;

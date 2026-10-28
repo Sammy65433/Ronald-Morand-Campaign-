@@ -2,9 +2,22 @@
 
 .hero {
   background:
-    radial-gradient(circle at 83% 10%, rgba(0, 32, 159, 0.14), transparent 32rem),
-    radial-gradient(circle at 7% 80%, rgba(210, 16, 52, 0.08), transparent 28rem),
-    linear-gradient(135deg, #f9fcff 0%, #e8f3ff 58%, #dcecff 100%);
+    radial-gradient(
+      circle at 83% 10%,
+      rgba(0, 32, 159, 0.14),
+      transparent 32rem
+    ),
+    radial-gradient(
+      circle at 7% 80%,
+      rgba(210, 16, 52, 0.08),
+      transparent 28rem
+    ),
+    linear-gradient(
+      135deg,
+      #f9fcff 0%,
+      #e8f3ff 58%,
+      #dcecff 100%
+    );
   font-family: "Outfit", Arial, sans-serif;
 }
 
@@ -14,7 +27,20 @@
     linear-gradient(rgba(0, 32, 159, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 32, 159, 0.05) 1px, transparent 1px);
   background-size: 64px 64px;
-  mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 20%,
+    #000 80%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 20%,
+    #000 80%,
+    transparent
+  );
 }
 
 .hero-glow {
@@ -39,36 +65,6 @@
   width: 340px;
   height: 340px;
   background: rgba(210, 16, 52, 0.07);
-}
-
-/* Styles for the existing Countdown component */
-.hero-countdown .countdown {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.hero-countdown .countdown-box {
-  min-width: 88px;
-  padding: 0.85rem 0.8rem;
-  border: 1px solid rgba(0, 32, 159, 0.17);
-  border-radius: 0.85rem;
-  background: #fff;
-  text-align: center;
-  box-shadow: 0 10px 24px rgba(0, 32, 159, 0.06);
-}
-
-.hero-countdown .countdown-box span {
-  display: block;
-  color: #00209f;
-  font-size: 1.55rem;
-  font-weight: 800;
-}
-
-.hero-countdown .countdown-box p {
-  margin: 0.15rem 0 0;
-  color: #40516b;
-  font-size: 0.82rem;
 }
 
 @media (max-width: 639px) {

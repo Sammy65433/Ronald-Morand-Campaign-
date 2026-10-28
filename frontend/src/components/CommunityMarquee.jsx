@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   FaMapMarkerAlt,
@@ -43,23 +44,23 @@ const aboutMessages = {
   ],
 };
 
-function CommunityMarquee({ variant = "community" }) {
-  const { i18n } = useTranslation();
+export default function CommunityMarquee({ variant = "community" }) {
+  const { t, i18n } = useTranslation();
+
   const language = i18n.resolvedLanguage?.split("-")[0] || "en";
   const selectedMessages = variant === "about" ? aboutMessages : messages;
   const items = selectedMessages[language] || selectedMessages.en;
-  const label = items.map(({ text }) => text).join(" · ");
 
   return (
-    <div className="community-marquee" role="region" aria-label={label}>
-      <div className="community-marquee-track">
+    <Link
+      to="/donate"
+      className="community-marquee"
+      aria-label={t("donateNow")}
+    >
+      <div className="community-marquee-track" aria-hidden="true">
         {[0, 1].map((copy) => (
-          <div
-            key={copy}
-            className="community-marquee-group"
-            aria-hidden={copy === 1}
-          >
-            {Array.from({ length: 3 }, (_, repeat) =>
+          <div className="community-marquee-group" key={copy}>
+            {[0, 1, 2].map((repeat) =>
               items.map(({ Icon, text }) => (
                 <span
                   className="community-marquee-item"
@@ -73,8 +74,6 @@ function CommunityMarquee({ variant = "community" }) {
           </div>
         ))}
       </div>
-    </div>
+    </Link>
   );
 }
-
-export default CommunityMarquee;

@@ -67,3 +67,14 @@
     overflow-x: auto;
   }
 }
+.community-marquee {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.community-marquee-track {
+  display: flex;
+  width: max-content;
+}

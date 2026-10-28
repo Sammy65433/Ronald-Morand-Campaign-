@@ -13,3 +13,8 @@
   background-size: 64px 64px;
   mask-image: linear-gradient(to bottom, #000, transparent 78%);
 }
+.about-page-section .community-marquee {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+}

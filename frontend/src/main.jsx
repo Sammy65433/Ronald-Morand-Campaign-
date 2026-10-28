@@ -5,11 +5,12 @@ import App from "./App";
 import "./styles/index.css";
 import "./i18n";
 
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <React.Suspense fallback={<div>Loading...</div>}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.Suspense>
   </React.StrictMode>
 );

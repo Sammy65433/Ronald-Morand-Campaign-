@@ -1,0 +1,50 @@
+.countdown {
+  width: min(100%, 36rem);
+  font-family: "Outfit", Arial, sans-serif;
+}
+
+.countdown-heading {
+  margin: 0 0 0.75rem;
+  color: #00209f;
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.hero-countdown .countdown-box {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.25rem;
+  border: 1px solid rgba(0, 32, 159, 0.18);
+  border-top: 3px solid #00209f;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0, 32, 159, 0.08);
+}
+
+.hero-countdown .countdown-box:last-child {
+  border-top-color: #d21034;
+}
+
+.countdown-number {
+  color: #00209f;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  margin-top: 0.5rem;
+  color: #334155;
+  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+  font-weight: 700;
+}
